@@ -12,14 +12,9 @@ in
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
 
+      ./system/boot.nix
       ./hosting/syncthing.nix
     ];
-
-  # Bootloader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
 
   networking.hostName = "Paisley-Park"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -191,17 +186,7 @@ in
   # };
 
   # List services that you want to enable:
-  boot = {
-    supportedFilesystems = [ "zfs" ];
 
-    zfs = {
-      forceImportRoot = false;
-      extraPools = [ "boundman" ];
-    };
-  };
-  programs = {
-    ssh.forwardX11 = true;
-  };
   services = {
     adguardhome = {
           enable = true;
