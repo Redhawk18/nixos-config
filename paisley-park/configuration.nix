@@ -4,19 +4,20 @@
 
 { config, pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
-in
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      "${home-manager}/nixos"
-      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
+  home-manager = builtins.fetchTarball
+    "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
+in {
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    "${home-manager}/nixos"
+    (fetchTarball
+      "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
-      ./system/boot.nix
-      ./system/networking.nix
-      ./hosting/syncthing.nix
-    ];
+    ./system/boot.nix
+    ./system/networking.nix
+    ./system/users.nix
+    ./hosting/syncthing.nix
+  ];
 
   services.vscode-server.enable = true;
   #services.vscode-server.installPath = "~/.vscodium-server";
@@ -45,7 +46,7 @@ in
     enable = true;
     layout = "us";
     xkbVariant = "";
-  
+
     # Enable the KDE Plasma Desktop Environment.
     displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
@@ -75,19 +76,7 @@ in
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.redhawk = {
-    isNormalUser = true;
-    description = "Redhawk";
-    extraGroups = [ "docker" "networkmanager" "systemd-journal" "wheel" ];
-    packages = with pkgs; [
-      firefox
-    ];
 
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOfTvGUneRjHy8UxRmxuxZdNjiiJuhbor5yDfWDUZyrG redhawk@Malos"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEVfQmsyWF3enfOUtx/MtltC9Lq1ia9y6/Cfpr8q+nR1 redhawk@Mythra"
-    ];
-  };
   home-manager.users.redhawk = { config, pkgs, ... }: {
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
@@ -127,7 +116,7 @@ in
 
       git = {
         enable = true;
-        userName  = "Redhawk18";
+        userName = "Redhawk18";
         userEmail = "redhawk76767676@gmail.com";
       };
 
@@ -152,24 +141,25 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      adguardhome
-      cmake
-      docker
-      docker-compose
-      git
-      gcc
-      gnumake
-      htop
-      inxi
-      neofetch
-      nfs-utils
-      openssh
-      plex
-      qbittorrent-nox
-      syncthing
-      wget
-      zfs
+    # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    adguardhome
+    cmake
+    docker
+    docker-compose
+    git
+    gcc
+    gnumake
+    htop
+    inxi
+    neofetch
+    nfs-utils
+    openssh
+    plex
+    qbittorrent-nox
+    syncthing
+    wget
+    zfs
+    nixfmt
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -184,8 +174,8 @@ in
 
   services = {
     adguardhome = {
-          enable = true;
-          openFirewall = true;
+      enable = true;
+      openFirewall = true;
     };
     nfs.server = {
       enable = true;
@@ -216,7 +206,8 @@ in
 
       serviceConfig = {
         Type = "exec";
-        ExecStart= "${pkgs.qbittorrent-nox}/bin/qbittorrent-nox --webui-port=8081";
+        ExecStart =
+          "${pkgs.qbittorrent-nox}/bin/qbittorrent-nox --webui-port=8081";
         User = "redhawk";
       };
 

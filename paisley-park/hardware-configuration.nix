@@ -4,29 +4,27 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = [ "kvm-amd" "msr"  ];
-  boot.kernelParams = [];
-  boot.extraModulePackages = [];
+  boot.initrd.availableKernelModules =
+    [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" "msr" ];
+  boot.kernelParams = [ ];
+  boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/71a4b709-dbc2-4a73-894c-d5971d96f24c";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/71a4b709-dbc2-4a73-894c-d5971d96f24c";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1022-B4AB";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/1022-B4AB";
+    fsType = "vfat";
+  };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/7a54aaa9-17b8-41cb-98ab-9ba01a309b02"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/7a54aaa9-17b8-41cb-98ab-9ba01a309b02"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -40,10 +38,7 @@
   hardware.cpu.amd.updateMicrocode = true;
 
   # CPU Microcode
-  environment.systemPackages = with pkgs; [
-    microcodeAmd
-    zenstates
-  ];
+  environment.systemPackages = with pkgs; [ microcodeAmd zenstates ];
 
   # Graphics
   # Make sure opengl is enabled
@@ -54,7 +49,7 @@
   };
 
   # Tell Xorg to use the nvidia driver
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
 
