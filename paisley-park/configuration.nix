@@ -2,21 +2,20 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
-in {
+{ pkgs, ... }:
+{
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    "${home-manager}/nixos"
     (fetchTarball
       "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
+
+    ./hosting/syncthing.nix
+
     ./system/boot.nix
+    ./system/home-manager.nix
     ./system/networking.nix
     ./system/users.nix
-    ./hosting/syncthing.nix
   ];
 
   services.vscode-server.enable = true;
@@ -76,64 +75,6 @@ in {
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-
-  home-manager.users.redhawk = { config, pkgs, ... }: {
-    # This value determines the Home Manager release that your
-    # configuration is compatible with. This helps avoid breakage
-    # when a new Home Manager release introduces backwards
-    # incompatible changes.
-    #
-    # You can update Home Manager without changing this value. See
-    # the Home Manager release notes for a list of state version
-    # changes in each release.
-    home.stateVersion = "23.05";
-    # Let Home Manager install and manage itself.
-    programs = {
-      home-manager.enable = true;
-
-      bash = {
-        enable = true;
-
-        initExtra = ''
-          PS1="\n\e[1;31m─\u\e[1m🎉\e[1;95m\h\e[1m─ \e[1;34m\w\e[0m \n \e[1;31m└\$ \e[0m"
-          PS2="=>"
-        '';
-
-        sessionVariables = {
-          # Rust
-          RUST_LOG = "info";
-        };
-
-        shellAliases = {
-          ".." = "cd ..";
-          ll = "ls -lah";
-          shutdown = "loginctl poweroff";
-          switch = "sudo nixos-rebuild switch";
-          update = "sudo nix-channel --update && sudo nixos-rebuild switch";
-          reboot = "loginctl reboot";
-        };
-      };
-
-      git = {
-        enable = true;
-        userName = "Redhawk18";
-        userEmail = "redhawk76767676@gmail.com";
-      };
-
-      ssh = {
-        enable = true;
-        compression = true;
-
-        matchBlocks = {
-          "github.com" = {
-            hostname = "github.com";
-            user = "git";
-            identityFile = "/home/redhawk/.ssh/keys/github";
-          };
-        };
-      };
-    };
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
