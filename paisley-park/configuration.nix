@@ -11,10 +11,12 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
+      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
       ./system/boot.nix
       ./hosting/syncthing.nix
     ];
+    services.vscode-server.enable = true;
 
   networking.hostName = "Paisley-Park"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
