@@ -19,7 +19,7 @@ in
     ];
 
   services.vscode-server.enable = true;
-  services.vscode-server.installPath = "~/.vscodium-server";
+  services.vscode-server.installPath = "~/.vscode-server-oss";
 
   # Set your time zone.
   time.timeZone = "America/New_York";
