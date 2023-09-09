@@ -114,7 +114,7 @@ in
         enable = true;
 
         initExtra = ''
-          PS1="\n\e[1;31m─\u\e[1m🎉\e[1;32m\h\e[1m─ \e[1;34m\w\e[0m \n \e[1;31m└\$ \e[0m"
+          PS1="\n\e[1;31m─\u\e[1m🎉\e[1;35m\h\e[1m─ \e[1;34m\w\e[0m \n \e[1;31m└\$ \e[0m"
           PS2="=>"
         '';
 
