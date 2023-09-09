@@ -2,20 +2,23 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     (fetchTarball
       "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
-
+    ./hosting/adguardhome.nix
+    ./hosting/nfs.nix
+    ./hosting/plex.nix
+    ./hosting/qbittorrent-nox.nix
     ./hosting/syncthing.nix
 
     ./system/boot.nix
     ./system/home-manager.nix
     ./system/networking.nix
     ./system/users.nix
+    ./system/zfs.nix
   ];
 
   services.vscode-server.enable = true;
@@ -74,8 +77,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -93,6 +94,7 @@
     htop
     inxi
     neofetch
+    nixfmt
     nfs-utils
     openssh
     plex
@@ -100,7 +102,6 @@
     syncthing
     wget
     zfs
-    nixfmt
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -112,48 +113,8 @@
   # };
 
   # List services that you want to enable:
-
-  services = {
-    adguardhome = {
-      enable = true;
-      openFirewall = true;
-    };
-    nfs.server = {
-      enable = true;
-      exports = ''
-        /boundman/server_files *(rw,sync)
-      '';
-    };
-    openssh.enable = true;
-    plex = {
-      enable = true;
-      openFirewall = true;
-    };
-
-    zfs.autoScrub = {
-      enable = true;
-      interval = "monthly";
-    };
-  };
+  services.openssh.enable = true;
   systemd = {
-    services.qbittorrent-nox = {
-      enable = true;
-      unitConfig = {
-        Description = "qBittorrent-nox service";
-        Documentation = "man:qbittorrent-nox(1)";
-        Wants = "network-online.target";
-        After = "network-online.target nss-lookup.target";
-      };
-
-      serviceConfig = {
-        Type = "exec";
-        ExecStart =
-          "${pkgs.qbittorrent-nox}/bin/qbittorrent-nox --webui-port=8081";
-        User = "redhawk";
-      };
-
-      wantedBy = [ "multi-user.target" ];
-    };
     targets = {
       sleep.enable = false;
       suspend.enable = false;
