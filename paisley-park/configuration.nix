@@ -11,11 +11,14 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       "${home-manager}/nixos"
+      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
       ./system/boot.nix
       ./system/networking.nix
       ./hosting/syncthing.nix
     ];
+
+  services.vscode-server.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
