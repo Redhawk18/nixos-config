@@ -8,15 +8,16 @@
     (fetchTarball
       "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
-    ./hosting/adguardhome.nix
-    ./hosting/nfs.nix
-    ./hosting/plex.nix
-    ./hosting/qbittorrent-nox.nix
-    ./hosting/syncthing.nix
+    ./applications/qbittorrent-nox.nix
+    ./applications/syncthing.nix
+
+    ./servers/adguardhome.nix
+    ./servers/plex.nix
 
     ./system/boot.nix
     ./system/home-manager.nix
     ./system/networking.nix
+    ./system/nfs.nix
     ./system/users.nix
     ./system/zfs.nix
   ];
