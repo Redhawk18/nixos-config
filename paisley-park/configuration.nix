@@ -11,6 +11,8 @@
     ./applications/qbittorrent-nox.nix
     ./applications/syncthing.nix
 
+    ./games/yuzu.nix
+
     ./servers/adguardhome.nix
     ./servers/plex.nix
 
@@ -18,6 +20,7 @@
     ./system/home-manager.nix
     ./system/networking.nix
     ./system/nfs.nix
+    ./system/nix.nix
     ./system/users.nix
     ./system/zfs.nix
   ];
@@ -94,9 +97,11 @@
     gnumake
     htop
     inxi
+    jre
     neofetch
     nixfmt
     nfs-utils
+    minecraft-server
     openssh
     plex
     qbittorrent-nox
