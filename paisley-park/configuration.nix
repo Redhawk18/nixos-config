@@ -11,7 +11,7 @@
     ./applications/qbittorrent-nox.nix
     ./applications/syncthing.nix
 
-    ./games/yuzu.nix
+    #./games/yuzu.nix
 
     ./servers/adguardhome.nix
     ./servers/plex.nix
@@ -129,7 +129,7 @@
       hybrid-sleep.enable = false;
     };
   };
-  
+
   virtualisation.docker.enable = true;
 
   system = {
