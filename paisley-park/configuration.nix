@@ -25,9 +25,6 @@
     ./system/zfs.nix
   ];
 
-  services.vscode-server.enable = true;
-  #services.vscode-server.installPath = "~/.vscodium-server";
-
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -92,15 +89,15 @@
     cmake
     docker
     docker-compose
-    git
     gcc
+    git
     gnumake
     htop
     inxi
     jre
     neofetch
-    nixfmt
     nfs-utils
+    nixfmt
     minecraft-server
     openssh
     plex
@@ -119,7 +116,11 @@
   # };
 
   # List services that you want to enable:
-  services.openssh.enable = true;
+  services = {
+    openssh.enable = true;
+    vscode-server.enable = true;
+  };
+
   systemd = {
     targets = {
       sleep.enable = false;
@@ -128,6 +129,7 @@
       hybrid-sleep.enable = false;
     };
   };
+  
   virtualisation.docker.enable = true;
 
   system = {
