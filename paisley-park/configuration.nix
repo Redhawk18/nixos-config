@@ -11,9 +11,10 @@
     ./applications/qbittorrent-nox.nix
     ./applications/syncthing.nix
 
-    #./games/yuzu.nix
+#    ./games/yuzu.nix
 
     ./servers/adguardhome.nix
+    ./servers/bongo-bot.nix
     ./servers/plex.nix
 
     ./system/boot.nix
@@ -130,7 +131,17 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    containers.enable = true;
+
+    podman = {
+      enable = true;
+      autoPrune.enable = true;
+
+      defaultNetwork.settings.dns_enabled = true;
+    };
+
+  };
 
   system = {
     stateVersion = "23.05";
