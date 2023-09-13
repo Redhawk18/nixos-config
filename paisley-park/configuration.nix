@@ -14,7 +14,7 @@
 #    ./games/yuzu.nix
 
     ./servers/adguardhome.nix
-    ./servers/bongo-bot.nix
+#    ./servers/bongo-bot.nix #running with docker :(
     ./servers/plex.nix
 
     ./system/boot.nix
@@ -133,6 +133,10 @@
 
   virtualisation = {
     containers.enable = true;
+
+    docker = {
+      enable = true;
+    };
 
     podman = {
       enable = true;
