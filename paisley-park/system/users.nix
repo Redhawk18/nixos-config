@@ -3,7 +3,7 @@
     isNormalUser = true;
     description = "Redhawk";
     extraGroups = [ "docker" "networkmanager" "systemd-journal" "wheel" ];
-    packages = with pkgs; [ firefox ];
+    packages = with pkgs; [ firefox vscodium ];
 
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOfTvGUneRjHy8UxRmxuxZdNjiiJuhbor5yDfWDUZyrG redhawk@Malos"

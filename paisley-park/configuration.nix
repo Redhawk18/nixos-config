@@ -11,8 +11,6 @@
     ./applications/qbittorrent-nox.nix
     ./applications/syncthing.nix
 
-#    ./games/yuzu.nix
-
     ./servers/adguardhome.nix
 #    ./servers/bongo-bot.nix #running with docker :(
     ./servers/plex.nix
@@ -144,7 +142,6 @@
 
       defaultNetwork.settings.dns_enabled = true;
     };
-
   };
 
   system = {
