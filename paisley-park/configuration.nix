@@ -12,7 +12,6 @@
     ./applications/syncthing.nix
 
     ./servers/adguardhome.nix
-#    ./servers/bongo-bot.nix #running with docker :(
     ./servers/plex.nix
 
     ./system/boot.nix
