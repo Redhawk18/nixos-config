@@ -32,6 +32,19 @@
         };
       };
 
+      "unrailed" = {
+        path = "~/unrailed";
+        devices = [ "Mythra" "steamdeck" ];
+        rescanInterval = 180;
+        versioning = {
+          type = "simple";
+          params = {
+            keep = "3";
+            cleanoutDays = "14";
+          };
+        };
+      };      
+
       "yuzu" = {
         path = "~/yuzu";
         devices = [ "Mythra" "steamdeck" ];
