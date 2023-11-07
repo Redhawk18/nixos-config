@@ -19,6 +19,7 @@
     ./system/networking.nix
     ./system/nfs.nix
     ./system/nix.nix
+	./system/samba.nix
     ./system/users.nix
     ./system/zfs.nix
   ];
@@ -84,7 +85,8 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     adguardhome
-    cmake
+    cifs-utils
+	cmake	
     docker
     docker-compose
     gcc
