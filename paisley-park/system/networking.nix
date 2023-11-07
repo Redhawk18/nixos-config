@@ -6,12 +6,8 @@
     firewall = {
       enable = false;
       # Open ports in the firewall.
-      # nfs.server https://nixos.wiki/wiki/NFS
-      # syncthing https://nixos.wiki/wiki/Syncthing
       # allowedTCPPorts = [ ];
       # allowedUDPPorts = [ ];
-
-      trustedInterfaces = [ "podman0" ];
     };
 
     networkmanager.enable = true;
