@@ -37,6 +37,19 @@ in {
         userEmail = "redhawk76767676@gmail.com";
       };
 
+      neovim = {
+        enable = true;
+        defaultEditor = true;
+        withNodeJs = true;
+        withPython3 = true;
+        withRuby = true;
+        extraPackages = with pkgs; [
+		  cargo
+		  luajitPackages.luarocks
+		  unzip
+		  ];
+      };
+
       ssh = {
         enable = true;
         compression = true;
@@ -48,6 +61,12 @@ in {
             identityFile = "/home/redhawk/.ssh/keys/github";
           };
         };
+      };
+    };
+
+    xdg = {
+      configFile."nvim".source = builtins.fetchGit {
+        url = "https://github.com/Redhawk18/neovim-config";
       };
     };
   };
