@@ -44,17 +44,17 @@
   # Configure keymap in X11
   services.xserver = {
     # Enable the X11 windowing system.
-    enable = true;
+    enable = false;
     layout = "us";
     xkbVariant = "";
 
     # Enable the KDE Plasma Desktop Environment.
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true;
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -94,6 +94,7 @@
     inxi
     jre
     neofetch
+    neovim
     nfs-utils
     nixfmt
     minecraft-server
