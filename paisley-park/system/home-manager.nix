@@ -24,10 +24,8 @@ in {
         shellAliases = {
           ".." = "cd ..";
           ll = "ls -lah";
-          shutdown = "loginctl poweroff";
           switch = "sudo nixos-rebuild switch";
           update = "sudo nix-channel --update && sudo nixos-rebuild switch";
-          reboot = "loginctl reboot";
         };
       };
 
@@ -44,9 +42,10 @@ in {
         withPython3 = true;
         withRuby = true;
         extraPackages = with pkgs; [
-		  cargo
-		  luajitPackages.luarocks
-		  unzip
+		    rustup
+#		    luajitPackages.luarocks
+			ripgrep
+		    unzip
 		  ];
       };
 

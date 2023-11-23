@@ -99,7 +99,7 @@
     neovim
     nfs-utils
     nixfmt
-    minecraft-server
+	nvtop
     openssh
     plex
     qbittorrent-nox

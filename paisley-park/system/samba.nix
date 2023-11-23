@@ -10,9 +10,6 @@
 		  comment = "Server Files";
           path = "/boundman/server_files/";
           "read only" = "no";
-          # "force user" = "nobody";
-          # "create mask" = "0644";
-          # "directory mask" = "0755";
 		};
       };
     };
