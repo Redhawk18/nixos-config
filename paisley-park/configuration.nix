@@ -95,6 +95,7 @@
     htop
     inxi
     jre
+	megacmd
     neofetch
     neovim
     nfs-utils
