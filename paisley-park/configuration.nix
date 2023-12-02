@@ -12,7 +12,8 @@
     ./applications/syncthing.nix
 
     ./servers/adguardhome.nix
-    ./servers/plex.nix
+	./servers/minecraft-server.nix	
+	./servers/plex.nix
 
     ./system/boot.nix
     ./system/home-manager.nix
