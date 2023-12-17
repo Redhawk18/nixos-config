@@ -42,11 +42,11 @@ in {
         withPython3 = true;
         withRuby = true;
         extraPackages = with pkgs; [
-		    rustup
-#		    luajitPackages.luarocks
-			ripgrep
-		    unzip
-		  ];
+          rustup
+          #		    luajitPackages.luarocks
+          ripgrep
+          unzip
+        ];
       };
 
       ssh = {

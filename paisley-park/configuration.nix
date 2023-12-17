@@ -12,15 +12,15 @@
     ./applications/syncthing.nix
 
     ./servers/adguardhome.nix
-	./servers/minecraft-server.nix	
-	./servers/plex.nix
+    ./servers/minecraft.nix
+    ./servers/plex.nix
 
     ./system/boot.nix
     ./system/home-manager.nix
     ./system/networking.nix
     ./system/nfs.nix
     ./system/nix.nix
-	./system/samba.nix
+    ./system/samba.nix
     ./system/users.nix
     ./system/zfs.nix
   ];
@@ -87,7 +87,7 @@
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     adguardhome
     cifs-utils
-	cmake	
+    cmake
     docker
     docker-compose
     gcc
@@ -96,12 +96,12 @@
     htop
     inxi
     jre
-	megacmd
+    megacmd
     neofetch
     neovim
     nfs-utils
     nixfmt
-	nvtop
+    nvtop
     openssh
     plex
     qbittorrent-nox
@@ -136,10 +136,10 @@
   virtualisation = {
     containers.enable = true;
 
-    docker = { 
-	  enable = true; 
+    docker = {
+      enable = true;
       autoPrune.enable = true;
-	};
+    };
 
     podman = {
       enable = true;
