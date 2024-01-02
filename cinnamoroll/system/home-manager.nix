@@ -58,15 +58,4 @@ in {
       };
     };
   };
-  home-manager.users.soph = { ... }: {
-	bash = {
-		enable = true;
-		
-		shellAliases = {
-			".." = "cd ..";
-			switch = "sudo nixos-rebuild switch";
-			update = "sudo nix-channel --update && sudo nixos-rebuild switch";
-		};
-	};
-  };
 }
