@@ -43,7 +43,6 @@ in {
         withRuby = true;
         extraPackages = with pkgs; [
           rustup
-          #		    luajitPackages.luarocks
           ripgrep
           unzip
         ];

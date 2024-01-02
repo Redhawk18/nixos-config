@@ -40,6 +40,15 @@ in {
       ssh = {
         enable = true;
         compression = true;
+
+		matchBlocks = {
+			"github.com" = {
+				hostname = "github.com";
+				user = "git";
+				identityFile = "/home/redhawk/.ssh/keys/github";
+			
+			};
+		};
       };
     };
 

@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   users = {
     users = {
-
       redhawk = {
         isNormalUser = true;
         description = "Redhawk";
