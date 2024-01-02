@@ -6,8 +6,6 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./applications/syncthing.nix
-
     ./system/boot.nix
     ./system/home-manager.nix
     ./system/networking.nix
@@ -86,7 +84,6 @@
     nfs-utils
     nixfmt
     openssh
-    syncthing
     wget
   ];
 
