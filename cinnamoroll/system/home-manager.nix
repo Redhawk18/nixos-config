@@ -24,6 +24,12 @@ in {
         };
       };
 
+      git = {
+        enable = true;
+        userName = "Redhawk18";
+        userEmail = "redhawk76767676@gmail.com";
+      };
+
       neovim = {
         enable = true;
         defaultEditor = true;
