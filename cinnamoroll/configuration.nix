@@ -15,7 +15,6 @@
     ./system/nix.nix
     ./system/samba.nix
     ./system/users.nix
-    ./system/zfs.nix
   ];
 
   # Set your time zone.
