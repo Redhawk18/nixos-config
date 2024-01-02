@@ -4,9 +4,9 @@
     guiAddress = "0.0.0.0:8384";
     openDefaultPorts = true;
 
-    devices = {};
+    settings.devices = {};
 
-    folders = {};
+    settings.folders = {};
   };
   networking.firewall = {
     allowedTCPPorts = [ 8384 22000 ];
