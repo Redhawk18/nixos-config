@@ -105,6 +105,7 @@
     openssh
     plex
     qbittorrent-nox
+    smartmontools
     syncthing
     wget
     zfs
