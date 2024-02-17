@@ -5,7 +5,7 @@
       dates = "monthly";
     };
 
-	optimise.automatic = true;
+    optimise.automatic = true;
 
     settings = {
       auto-optimise-store = true;

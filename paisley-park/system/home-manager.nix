@@ -40,11 +40,14 @@ in {
         defaultEditor = true;
         withNodeJs = true;
         withPython3 = true;
-        withRuby = true;
         extraPackages = with pkgs; [
-          rustup
+          nil
+          nixfmt 
           ripgrep
+          rustup
           unzip
+          wl-clipboard
+          xclip
         ];
       };
 
@@ -63,9 +66,10 @@ in {
     };
 
     xdg = {
-      configFile."nvim".source = builtins.fetchGit {
-        url = "https://github.com/Redhawk18/neovim-config";
-      };
+      # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
+            configFile."nvim".source = builtins.fetchGit {
+              url = "https://github.com/Redhawk18/neovim-config";
+            };
     };
   };
 }

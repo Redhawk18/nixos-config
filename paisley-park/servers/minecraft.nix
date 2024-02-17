@@ -25,10 +25,6 @@ let
 in {
   systemd.services = lib.attrsets.mergeAttrsList [
     (Minecraft {
-    #  name = "sophie";
-    #  memory = "2";
-    # }
-    # Minecraft {
       name = "1.20-World";
       memory = "4";
     })

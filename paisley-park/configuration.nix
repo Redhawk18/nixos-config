@@ -8,10 +8,10 @@
     (fetchTarball
       "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
+    ./applications/adguardhome.nix
     ./applications/qbittorrent-nox.nix
     ./applications/syncthing.nix
 
-    ./servers/adguardhome.nix
     ./servers/minecraft.nix
     ./servers/plex.nix
 
@@ -100,6 +100,7 @@
     neofetch
     neovim
     nfs-utils
+    nil
     nixfmt
     nvtop
     openssh
