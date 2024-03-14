@@ -3,7 +3,7 @@
     server = {
       enable = true;
       exports = ''
-		/var/lib/nfs/share *(rw,sync)
+        /var/share *(rw,sync)
 	  '';
     };
   };
