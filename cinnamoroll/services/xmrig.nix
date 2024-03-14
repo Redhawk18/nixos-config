@@ -2,7 +2,7 @@
 
 services.xmrig = {
   enable = true;
-  package = pkgs.xmrig-mo;
+  package = pkgs.xmrig;
   settings = {
     autosave = true;
     cpu = true;
