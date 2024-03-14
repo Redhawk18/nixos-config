@@ -6,8 +6,8 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./system/nfs.nix
-    ./system/samba.nix
+    ./services/nfs.nix
+    ./services/samba.nix
     ./services/xmrig.nix
 
     ./system/boot.nix
