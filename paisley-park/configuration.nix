@@ -15,12 +15,14 @@
     ./servers/minecraft.nix
     ./servers/plex.nix
 
+    ./services/nfs.nix
+    ./services/samba.nix
+    ./services/xmrig.nix
+
     ./system/boot.nix
     ./system/home-manager.nix
     ./system/networking.nix
-    ./system/nfs.nix
     ./system/nix.nix
-    ./system/samba.nix
     ./system/users.nix
     ./system/zfs.nix
   ];
@@ -86,6 +88,7 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     adguardhome
+    btop
     cifs-utils
     cmake
     docker

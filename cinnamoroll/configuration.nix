@@ -6,12 +6,14 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
+    ./system/nfs.nix
+    ./system/samba.nix
+    ./services/xmrig.nix
+
     ./system/boot.nix
     ./system/home-manager.nix
     ./system/networking.nix
-    ./system/nfs.nix
     ./system/nix.nix
-    ./system/samba.nix
     ./system/users.nix
   ];
 
