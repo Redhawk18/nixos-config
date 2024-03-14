@@ -4,10 +4,10 @@
       enable = true;
       openFirewall = true;
         shares = {
-          browseable = "yes";
+          browseable = true;
           comment = "Sophia's Network Share";
           path = "/var/share";
-          "read only" = "no";
+          "read only" = false;
         };
 
     };
