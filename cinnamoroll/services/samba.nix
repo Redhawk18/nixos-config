@@ -3,7 +3,7 @@
     samba = {
       enable = true;
       openFirewall = true;
-        share = {
+        shares = {
           browseable = "yes";
           comment = "Sophia's Network Share";
           path = "/var/share";

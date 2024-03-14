@@ -3,7 +3,6 @@
     samba = {
       enable = true;
       openFirewall = true;
-
       shares = {
         server_files = {
           browseable = "yes";
