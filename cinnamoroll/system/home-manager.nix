@@ -37,6 +37,9 @@ in {
         withPython3 = true;
         withRuby = true;
         extraPackages = with pkgs; [
+          gcc
+          git
+          gnumake
           rustup
           ripgrep
           unzip
