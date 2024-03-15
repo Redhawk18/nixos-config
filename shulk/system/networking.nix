@@ -1,6 +1,6 @@
 {
   networking = {
-    hostName = "Cinnamoroll";
+    hostName = "Shulk";
 
     firewall = {
       enable = false;
