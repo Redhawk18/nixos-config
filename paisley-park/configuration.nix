@@ -3,28 +3,29 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, ... }: {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     (fetchTarball
       "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
-    ./applications/adguardhome.nix
-    ./applications/qbittorrent-nox.nix
-    ./applications/syncthing.nix
-
-    ./servers/minecraft.nix
-    ./servers/plex.nix
-
+    ./services/adguardhome.nix
     ./services/nfs.nix
+    ./services/minecraft.nix
+    ./services/plex.nix
+    ./services/qbittorrent-nox.nix
     ./services/samba.nix
+    ./services/syncthing.nix
     ./services/xmrig.nix
 
     ./system/boot.nix
-    ./system/home-manager.nix
     ./system/networking.nix
-    ./system/nix.nix
     ./system/users.nix
     ./system/zfs.nix
+
+    ../common/system/home-manager.nix
+    ../common/system/nix.nix
+    ../common/system/system.nix
   ];
 
   # Set your time zone.
@@ -103,8 +104,6 @@
     neofetch
     neovim
     nfs-utils
-    nil
-    nixfmt
     nvtop
     openssh
     plex
