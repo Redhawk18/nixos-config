@@ -3,18 +3,18 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, ... }: {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./services/nfs.nix
-    ./services/samba.nix
-    ./services/xmrig.nix
-
     ./system/boot.nix
-    ./system/home-manager.nix
     ./system/networking.nix
-    ./system/nix.nix
     ./system/users.nix
+
+    ../common/services/xmrig.nix
+    ../common/system/home-manager.nix
+    ../common/system/nix.nix
+    ../common/system/system.nix
   ];
 
   # Set your time zone.
@@ -79,7 +79,7 @@
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     btop
     cifs-utils
-	git
+    git
     htop
     inxi
     iwd

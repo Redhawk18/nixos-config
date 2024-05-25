@@ -1,10 +1,11 @@
-let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
-in {
-  imports = [ "${home-manager}/nixos" ];
+{
+  imports = [ <home-manager/nixos> ];
   home-manager.users.redhawk = { config, pkgs, ... }: {
-    home.stateVersion = "23.05";
+    home = {
+      username = "redhawk";
+      homeDirectory = "/home/redhawk";
+      stateVersion = "24.05";
+    };
     programs = {
       home-manager.enable = true;
 
@@ -12,21 +13,19 @@ in {
         enable = true;
 
         initExtra = ''
-          PS1="\n\e[1;31m─\u\e[1m💾\e[1;95m\h\e[1m─ \e[1;34m\w\e[0m \n \e[1;31m└\$ \e[0m"
-          PS2="=>"
+          eval "$(starship init bash)"
         '';
-
-        sessionVariables = {
-          # Rust
-          RUST_LOG = "info";
-        };
 
         shellAliases = {
           ".." = "cd ..";
           ll = "ls -lah";
           switch = "sudo nixos-rebuild switch";
-          update = "sudo nix-channel --update && sudo nixos-rebuild switch";
+          update = "sudo nixos-rebuild switch --upgrade";
         };
+      };
+
+      btop = {
+        settings = { color_theme = "gruvbox_dark_v2.theme"; };
       };
 
       git = {
@@ -41,11 +40,11 @@ in {
         withNodeJs = true;
         withPython3 = true;
         extraPackages = with pkgs; [
-          nil
-          nixfmt 
+          lemonade
+          nixd
+          nixpkgs-fmt
           ripgrep
           rustup
-          unzip
           wl-clipboard
           xclip
         ];
@@ -61,15 +60,27 @@ in {
             user = "git";
             identityFile = "/home/redhawk/.ssh/keys/github";
           };
+
+          "gitlab.com" = {
+            hostname = "gitlab.com";
+            user = "git";
+            identityFile = "/home/redhawk/.ssh/keys/gitlab";
+          };
+
+          paisley-park = {
+            hostname = "paisley-park.lan";
+            user = "redhawk";
+            identityFile = "/home/redhawk/.ssh/keys/paisley-park";
+          };
         };
       };
     };
 
     xdg = {
-      # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
-            configFile."nvim".source = builtins.fetchGit {
-              url = "https://github.com/Redhawk18/neovim-config";
-            };
+      configFile."nvim".source = "/home/redhawk/code/neovim-config/";
+      #configFile."nvim".source = builtins.fetchGit {
+      #  url = "https://github.com/Redhawk18/neovim-config";
+      # };
     };
   };
 }

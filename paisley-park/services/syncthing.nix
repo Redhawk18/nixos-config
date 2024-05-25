@@ -19,18 +19,18 @@
     };
 
     folders = {
-      "dolphin" = {
-        path = "~/dolphin";
-        devices = [ "Mythra" "steamdeck" ];
-        rescanInterval = 60;
-        versioning = {
-          type = "simple";
-          params = {
-            keep = "3";
-            cleanoutDays = "14";
-          };
-        };
-      };
+      # "dolphin" = {
+      #   path = "~/dolphin";
+      #   devices = [ "Mythra" "steamdeck" ];
+      #   rescanInterval = 60;
+      #   versioning = {
+      #     type = "simple";
+      #     params = {
+      #       keep = "3";
+      #       cleanoutDays = "14";
+      #     };
+      #   };
+      # };
 
       "unrailed" = {
         path = "~/unrailed";
@@ -59,6 +59,7 @@
       };
     };
   };
+
   networking.firewall = {
     allowedTCPPorts = [ 8384 22000 ];
     allowedUDPPorts = [ 22000 21027 ];
