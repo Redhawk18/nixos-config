@@ -15,6 +15,7 @@
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
+    user = "redhawk";
 
     settings.devices = {
       "Paisley-Park" = {

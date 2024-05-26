@@ -13,6 +13,7 @@
     ../common/desktop/gaming.nix
     ../common/clients/nfs.nix
     ../common/programs/direnv.nix
+    ../common/services/printing.nix
     ../common/services/xmrig.nix
 
     ../common/system/home-manager.nix
@@ -44,19 +45,9 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the Plasma 6 Desktop Environment.
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true;
