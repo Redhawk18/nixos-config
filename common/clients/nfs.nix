@@ -10,6 +10,12 @@
   fileSystems."/mnt/paisley-park" = {
     device = "paisley-park.lan:/boundman/server_files";
     fsType = "nfs";
-    options = [ "x-systemd.automount" "x-systemd.idle-timeout=600" "noauto" ];
+    options = [
+      "noauto"
+      "rsize=131072"
+      "wsize=131072"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=600"
+    ];
   };
 }

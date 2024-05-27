@@ -13,8 +13,7 @@
     ../common/desktop/gaming.nix
     ../common/clients/nfs.nix
     ../common/programs/direnv.nix
-    ../common/services/printing.nix
-    ../common/services/xmrig.nix
+    #    ../common/services/xmrig.nix
 
     ../common/system/home-manager.nix
     ../common/system/nix.nix
@@ -25,7 +24,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "Mythra"; # Define your hostname.
+  networking.hostName = "Malos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
@@ -48,6 +47,9 @@
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
+
+  # Enable CUPS to print documents.
+  # services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true;
@@ -75,7 +77,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    cubiomes-viewer
     home-manager
     neovim
     wget
@@ -95,15 +96,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  systemd = {
-    targets = {
-      sleep.enable = false;
-      suspend.enable = false;
-      hibernate.enable = false;
-      hybrid-sleep.enable = false;
-    };
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

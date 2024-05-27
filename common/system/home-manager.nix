@@ -40,6 +40,7 @@
         withNodeJs = true;
         withPython3 = true;
         extraPackages = with pkgs; [
+          clang
           lemonade
           nixd
           nixpkgs-fmt
@@ -77,10 +78,10 @@
     };
 
     xdg = {
-      configFile."nvim".source = "/home/redhawk/code/neovim-config/";
-      #configFile."nvim".source = builtins.fetchGit {
-      #  url = "https://github.com/Redhawk18/neovim-config";
-      # };
+      #configFile."nvim".source = "/home/redhawk/code/neovim-config/";
+      configFile."nvim".source = builtins.fetchGit {
+        url = "https://github.com/Redhawk18/neovim-config";
+      };
     };
   };
 }
