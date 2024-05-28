@@ -12,8 +12,10 @@
     vesktop
   ];
 
+  services.flatpak.enable = true;
+
   services.syncthing = {
-    enable = true;
+    enable = false;
     openDefaultPorts = true;
     user = "redhawk";
 

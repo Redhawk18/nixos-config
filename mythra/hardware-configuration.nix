@@ -11,6 +11,7 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "msr" "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.loader.grub.useOSProber = true;
@@ -72,7 +73,10 @@
       driSupport = true;
       driSupport32Bit = true;
     };
+
+    #  bluetooth.enable = true;
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
+
 }
