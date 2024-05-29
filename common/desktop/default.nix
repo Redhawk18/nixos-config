@@ -16,7 +16,6 @@
     kdePackages.akonadi
     kdePackages.filelight
     kdePackages.kdepim-runtime
-    kdePackages.kdeconnect-kde
     kdePackages.kmail
     kdePackages.kmail-account-wizard
     kdePackages.kolourpaint
@@ -26,7 +25,6 @@
 
     audacious
     firefox
-
     monero-gui
     libreoffice-qt
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
@@ -46,5 +44,7 @@
         "widget.use-xdg-desktop-portal.mime-handler" = 1;
       };
     };
+
+    kdeconnect.enable = true;
   };
 }
