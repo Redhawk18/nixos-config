@@ -28,6 +28,11 @@
         settings = { color_theme = "gruvbox_dark_v2.theme"; };
       };
 
+      direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+      };
+
       git = {
         enable = true;
         userName = "Redhawk18";
@@ -37,15 +42,18 @@
       neovim = {
         enable = true;
         defaultEditor = true;
-        withNodeJs = true;
-        withPython3 = true;
         extraPackages = with pkgs; [
           clang
+          git
           lemonade
           nixd
           nixpkgs-fmt
+          nodejs
+          python3
           ripgrep
           rustup
+          rust-analyzer
+          unzip
           wl-clipboard
           xclip
         ];

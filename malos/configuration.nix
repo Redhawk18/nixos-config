@@ -12,7 +12,6 @@
     ../common/desktop/default.nix
     ../common/desktop/gaming.nix
     ../common/clients/nfs.nix
-    ../common/programs/direnv.nix
     #    ../common/services/xmrig.nix
 
     ../common/system/home-manager.nix
@@ -30,7 +29,8 @@
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  # time.timeZone = "America/New_York";
+  services.automatic-timezoned.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -82,6 +82,9 @@
     wget
     starship
     swayidle
+
+    rustup
+    rust-analyzer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

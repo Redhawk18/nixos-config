@@ -32,6 +32,7 @@
     plex-media-player
     plexamp
     vesktop
+    vlc
   ];
 
   programs = {
