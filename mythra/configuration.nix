@@ -11,8 +11,8 @@
 
     ../common/desktop/default.nix
     ../common/desktop/gaming.nix
+    ../common/desktop/programming.nix
     ../common/clients/nfs.nix
-    ../common/programs/direnv.nix
     ../common/services/printing.nix
     ../common/services/xmrig.nix
 
@@ -66,7 +66,7 @@
       "systemd-journal"
       "wheel"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ btop ];
+    packages = with pkgs; [ btop neovim starship ];
   };
 
   # Allow unfree packages
@@ -76,11 +76,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    cubiomes-viewer
     home-manager
     neovim
     wget
-    starship
     swayidle
     docker
     docker-compose

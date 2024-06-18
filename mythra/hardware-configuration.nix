@@ -74,7 +74,7 @@
       driSupport32Bit = true;
     };
 
-    #  bluetooth.enable = true;
+    bluetooth.enable = true;
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];

@@ -8,7 +8,7 @@
         description = "Redhawk";
         extraGroups =
           [ "docker" "minecraft" "networkmanager" "systemd-journal" "wheel" ];
-        packages = with pkgs; [ firefox vscodium ];
+        packages = with pkgs; [ btop neovim starship ];
 
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOfTvGUneRjHy8UxRmxuxZdNjiiJuhbor5yDfWDUZyrG redhawk@Malos"
