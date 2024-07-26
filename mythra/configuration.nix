@@ -22,7 +22,7 @@
   ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "Mythra"; # Define your hostname.
@@ -51,7 +51,7 @@
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable sound.
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -66,7 +66,7 @@
       "systemd-journal"
       "wheel"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ btop neovim starship ];
+    packages = with pkgs; [ btop neovim swayidle starship ];
   };
 
   # Allow unfree packages
@@ -77,9 +77,7 @@
   environment.systemPackages = with pkgs; [
     git
     home-manager
-    neovim
     wget
-    swayidle
     docker
     docker-compose
   ];
@@ -115,7 +113,6 @@
     };
 
   };
-
 
 
   # Open ports in the firewall.

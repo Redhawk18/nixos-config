@@ -1,6 +1,6 @@
 {
   imports = [ <home-manager/nixos> ];
-  home-manager.users.redhawk = { config, pkgs, ... }: {
+  home-manager.users.redhawk = { config, lib, pkgs, ... }: {
     home = {
       username = "redhawk";
       homeDirectory = "/home/redhawk";
@@ -15,6 +15,10 @@
         initExtra = ''
           eval "$(starship init bash)"
         '';
+
+        sessionVariables = {
+          NIXPKGS_ALLOW_UNFREE = 1;
+        };
 
         shellAliases = {
           ".." = "cd ..";
@@ -85,11 +89,26 @@
       };
     };
 
+    services.swayidle = {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 300;
+          command = ''${lib.getExe pkgs.curl} -s --json '{"method": "resume", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc'';
+          resumeCommand = ''${lib.getExe pkgs.curl} -s --json '{"method": "pause", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc'';
+        }
+      ];
+    };
+
     xdg = {
-      #configFile."nvim".source = "/home/redhawk/code/neovim-config/";
+      # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
       configFile."nvim".source = builtins.fetchGit {
         url = "https://github.com/Redhawk18/neovim-config";
       };
     };
   };
 }
+
+
+
+

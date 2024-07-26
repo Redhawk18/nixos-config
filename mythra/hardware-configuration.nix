@@ -14,6 +14,8 @@
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "msr" "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";
   boot.loader.grub.useOSProber = true;
 
   fileSystems."/" =
@@ -70,7 +72,7 @@
 
     opengl = {
       enable = true;
-      driSupport = true;
+      # driSupport = true;
       driSupport32Bit = true;
     };
 
@@ -79,4 +81,5 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
+  environment.systemPackages = with pkgs; [ corectrl ];
 }

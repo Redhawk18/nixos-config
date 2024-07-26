@@ -29,8 +29,8 @@
     libreoffice-qt
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     noto-fonts
-    plex-media-player
     plexamp
+    puddletag
     vesktop
     vlc
   ];
