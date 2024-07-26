@@ -67,7 +67,7 @@
       "systemd-journal"
       "wheel"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ btop ];
+    packages = with pkgs; [ btop neovim swayidle starship ];
   };
 
   # Allow unfree packages
@@ -78,13 +78,7 @@
   environment.systemPackages = with pkgs; [
     git
     home-manager
-    neovim
     wget
-    starship
-    swayidle
-
-    rustup
-    rust-analyzer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
