@@ -99,7 +99,6 @@
     gnumake
     htop
     inxi
-    jre
     megacmd
     neofetch
     neovim
@@ -108,6 +107,7 @@
     openssh
     plex
     qbittorrent-nox
+    screen
     smartmontools
     syncthing
     wget
