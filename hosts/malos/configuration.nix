@@ -12,7 +12,6 @@
     ../common/desktop/default.nix
     ../common/desktop/gaming.nix
     ../common/clients/nfs.nix
-    #    ../common/services/xmrig.nix
 
     ../common/system/home-manager.nix
     ../common/system/nix.nix

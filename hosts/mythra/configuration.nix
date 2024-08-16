@@ -9,14 +9,14 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ../common/desktop
-    ../common/clients/nfs.nix
-    ../common/services/printing.nix
-    ../common/services/xmrig.nix
+    ../../common/desktop
+    ../../common/clients/nfs.nix
+    ../../common/services/printing.nix
+    ../../common/services/xmrig.nix
 
-    ../common/system/home-manager.nix
-    ../common/system/nix.nix
-    ../common/system/system.nix
+    ../../common/system/home-manager.nix
+    ../../common/system/nix.nix
+    ../../common/system/system.nix
   ];
   # Custom options
   desktop.enable = true;
