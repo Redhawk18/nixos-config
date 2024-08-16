@@ -12,27 +12,28 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   # boot.kernelPackages = pkgs.linuxPackages_latest;
+
   boot.kernelModules = [ "msr" "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.useOSProber = true;
+
+  boot.supportedFilesystems = [ "ntfs" ];
+
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/5ad21ebf-ca21-410a-8761-2a84207f52c2";
+      device = "/dev/disk/by-uuid/6ae66ba6-6494-4a93-874c-147b37b63b27";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
     {
-      device = "/dev/disk/by-uuid/D5C8-0BA4";
+      device = "/dev/disk/by-uuid/324D-CB35"; # nixos drive
       fsType = "vfat";
     };
 
   fileSystems."/nix" =
     {
-      device = "/dev/disk/by-uuid/0674520e-474d-47ed-ba43-dd9337be2e6e";
+      device = "/dev/disk/by-uuid/91a1b476-4b73-4517-987c-8a82b2b5510b";
       fsType = "ext4";
     };
 
@@ -81,5 +82,5 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  environment.systemPackages = with pkgs; [ corectrl ];
+  environment.systemPackages = with pkgs; [ gparted corectrl ];
 }

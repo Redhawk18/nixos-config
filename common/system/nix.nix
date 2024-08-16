@@ -1,8 +1,11 @@
 {
   nix = {
-    gc.automatic = true;
+    gc =
+      {
+        automatic = true;
+        options = "--delete-older-than 30d";
+      };
     optimise.automatic = true;
-    optimise.dates = [ "18:30" ];
 
     settings = {
       auto-optimise-store = true;

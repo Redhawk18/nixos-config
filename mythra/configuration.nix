@@ -9,9 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ../common/desktop/default.nix
-    ../common/desktop/gaming.nix
-    ../common/desktop/programming.nix
+    ../common/desktop
     ../common/clients/nfs.nix
     ../common/services/printing.nix
     ../common/services/xmrig.nix
@@ -20,9 +18,13 @@
     ../common/system/nix.nix
     ../common/system/system.nix
   ];
+  # Custom options
+  desktop.enable = true;
+  gaming.enable = true;
+  programming.enable = true;
 
   # Use the systemd-boot EFI boot loader.
-  # boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "Mythra"; # Define your hostname.
@@ -31,8 +33,8 @@
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  # time.timeZone = "America/New_York";
-  services.automatic-timezoned.enable = true;
+  time.timeZone = "America/New_York";
+  # services.automatic-timezoned.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -78,8 +80,6 @@
     git
     home-manager
     wget
-    docker
-    docker-compose
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
