@@ -76,6 +76,7 @@
       # driSupport = true;
       driSupport32Bit = true;
     };
+    amdgpu.opencl.enable = true;
 
     bluetooth.enable = true;
   };
