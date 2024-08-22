@@ -15,6 +15,7 @@
     ./services/plex.nix
     ./services/qbittorrent-nox.nix
     ./services/samba.nix
+    ./services/sonarr.nix
     ./services/syncthing.nix
     ./services/xmrig.nix
 
@@ -23,9 +24,9 @@
     ./system/users.nix
     ./system/zfs.nix
 
-    ../common/system/home-manager.nix
-    ../common/system/nix.nix
-    ../common/system/system.nix
+    ../../common/system/home-manager.nix
+    ../../common/system/nix.nix
+    ../../common/system/system.nix
   ];
 
   # Set your time zone.

@@ -68,7 +68,7 @@
       "systemd-journal"
       "wheel"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ btop neovim swayidle starship ];
+    packages = with pkgs; [ btop.override { cudaSupport = true; rocmSupport = true; } neovim swayidle starship ];
   };
 
   # Allow unfree packages
