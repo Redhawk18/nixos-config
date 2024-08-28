@@ -80,6 +80,12 @@
             identityFile = "/home/redhawk/.ssh/keys/gitlab";
           };
 
+          mythra = {
+            hostname = "mythra.lan";
+            user = "redhawk";
+            identityFile = "/home/redhawk/.ssh/keys/mythra";
+          };
+
           paisley-park = {
             hostname = "paisley-park.lan";
             user = "redhawk";
@@ -101,10 +107,10 @@
     };
 
     xdg = {
-      # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
-      configFile."nvim".source = builtins.fetchGit {
-        url = "https://github.com/Redhawk18/neovim-config";
-      };
+      configFile."nvim".source = "/home/redhawk/code/neovim-config/";
+      #      configFile."nvim".source = builtins.fetchGit {
+      #  url = "https://github.com/Redhawk18/neovim-config";
+      #};
     };
   };
 }

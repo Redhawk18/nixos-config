@@ -8,20 +8,19 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./ollama.nix
 
-    ../../common/desktop
-    ../../common/clients/nfs.nix
-    ../../common/services/printing.nix
-    ../../common/services/xmrig.nix
-
-    ../../common/system/home-manager.nix
-    ../../common/system/nix.nix
-    ../../common/system/system.nix
+    ../../common/default.nix
   ];
   # Custom options
-  desktop.enable = true;
-  gaming.enable = true;
-  programming.enable = true;
+  nfs = true;
+  desktop = {
+    enable = true;
+    gaming = true;
+    programming = true;
+  };
+  printing = true;
+  xmrig = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -68,7 +67,7 @@
       "systemd-journal"
       "wheel"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ btop.override { cudaSupport = true; rocmSupport = true; } neovim swayidle starship ];
+    packages = with pkgs; [ btop neovim swayidle starship ];
   };
 
   # Allow unfree packages
@@ -113,7 +112,6 @@
     };
 
   };
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

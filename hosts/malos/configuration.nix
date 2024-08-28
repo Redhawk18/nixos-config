@@ -9,14 +9,15 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ../common/desktop/default.nix
-    ../common/desktop/gaming.nix
-    ../common/clients/nfs.nix
-
-    ../common/system/home-manager.nix
-    ../common/system/nix.nix
-    ../common/system/system.nix
+    ../../common/default.nix
   ];
+  # Custom options
+  nfs = true;
+  desktop = {
+    enable = true;
+    gaming = true;
+  };
+  printing = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -74,11 +75,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
-    home-manager
-    wget
-  ];
+  environment.systemPackages = with pkgs; [ ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

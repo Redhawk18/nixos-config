@@ -3,11 +3,7 @@ let
   user = "redhawk";
 in
 {
-  options = {
-    gaming.enable = lib.mkEnableOption "enables gaming";
-  };
-
-  config = lib.mkIf config.gaming.enable {
+  config = lib.mkIf config.desktop.gaming {
     programs.steam.enable = true;
     programs.steam.gamescopeSession.enable = true;
     programs.gamemode.enable = true;
