@@ -34,6 +34,7 @@
       kdePackages.korganizer
       kdePackages.okular
       kdePackages.skanpage
+      kdePackages.yakuake
 
       audacious
       firefox

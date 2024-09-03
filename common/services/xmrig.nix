@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 let
   xmrig-pause = pkgs.writeShellScriptBin "xmrig-pause" ''
-    ${lib.getExe pkgs.curl} -s --json '{"method": "pause", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc
+    curl -s --json '{"method": "pause", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc
   '';
 in
 {

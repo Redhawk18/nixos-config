@@ -1,9 +1,11 @@
 { config, lib, pkgs, ... }:
 {
   config = lib.mkIf config.printing {
-    services.printing.enable = true;
-    services.printing.drivers = with pkgs; [ hplip ];
-
+    services.printing = {
+      enable = true;
+      drivers = with pkgs; [ hplip ];
+      startWhenNeeded = true;
+    };
     hardware.printers = {
       ensurePrinters = [
         {

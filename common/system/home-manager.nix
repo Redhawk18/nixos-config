@@ -18,6 +18,7 @@
 
         sessionVariables = {
           NIXPKGS_ALLOW_UNFREE = 1;
+          CODELLDB_PATH = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/";
         };
 
         shellAliases = {
@@ -47,19 +48,42 @@
         enable = true;
         defaultEditor = true;
         extraPackages = with pkgs; [
-          clang
+          # programs
           git
           lemonade
-          nixd
-          nixpkgs-fmt
-          nodejs
-          python3
           ripgrep
-          rustup
-          rust-analyzer
-          unzip
           wl-clipboard
           xclip
+
+          # runtimes 
+          nodejs
+          python3
+
+          # bash
+          nodePackages.bash-language-server
+          shfmt
+
+          # c, c++
+          clang
+          vscode-extensions.llvm-vs-code-extensions.vscode-clangd
+          clang-tools
+
+          # lua
+          luajitPackages.lua-lsp
+
+          # nix
+          nixd
+          nixpkgs-fmt
+
+          # python
+          pyright
+          black
+          isort
+
+          # rust
+          rustup
+          rust-analyzer
+          vscode-extensions.vadimcn.vscode-lldb
         ];
       };
 
@@ -107,10 +131,10 @@
     };
 
     xdg = {
-      configFile."nvim".source = "/home/redhawk/code/neovim-config/";
-      #      configFile."nvim".source = builtins.fetchGit {
-      #  url = "https://github.com/Redhawk18/neovim-config";
-      #};
+      # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
+       configFile."nvim".source = builtins.fetchGit {
+        url = "https://github.com/Redhawk18/neovim-config";
+      };
     };
   };
 }

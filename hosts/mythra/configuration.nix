@@ -109,6 +109,7 @@
     docker = {
       enable = true;
       autoPrune.enable = true;
+      # daemon.settings = { data-root = "/home/redhawk/.local/state/"; };
     };
 
   };
