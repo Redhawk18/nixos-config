@@ -40,6 +40,7 @@
       firefox
       monero-gui
       libreoffice-qt
+      liberation_ttf
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       noto-fonts
       plexamp
