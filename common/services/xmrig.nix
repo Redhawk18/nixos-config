@@ -3,6 +3,10 @@ let
   xmrig-pause = pkgs.writeShellScriptBin "xmrig-pause" ''
     curl -s --json '{"method": "pause", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc
   '';
+
+  xmrig-resume = pkgs.writeShellScriptBin "xmrig-pause" ''
+    curl -s --json '{"method": "resume", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc
+  '';
 in
 {
   config = lib.mkIf config.xmrig {
@@ -38,6 +42,6 @@ in
         pause-on-battery = true;
       };
     };
-    environment.systemPackages = [ xmrig-pause ];
+    environment.systemPackages = [ xmrig-pause xmrig-resume ];
   };
 }

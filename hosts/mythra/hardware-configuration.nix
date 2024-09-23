@@ -48,12 +48,14 @@
     {
       device = "/dev/disk/by-uuid/53ddb300-4589-48e6-a101-2d77091882e4";
       fsType = "ext4";
+      options = [ "nofail" ];
     };
 
   fileSystems."/mnt/windows" =
     {
       device = "/dev/disk/by-uuid/3AEA8E2CEA8DE50B";
       fsType = "ntfs";
+      options = [ "nofail" ];
     };
 
   swapDevices = [ ];
@@ -66,8 +68,12 @@
   # networking.interfaces.enp14s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp15s0.useDHCP = lib.mkDefault true;
 
-  nixpkgs.config.rocmSupport = true;
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs = {
+    config.rocmSupport = true;
+    #    gcc.arch = "znver4";
+    #    gcc.tune = "znver4";
+    system = lib.mkDefault "x86_64-linux";
+  };
 
   hardware = {
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

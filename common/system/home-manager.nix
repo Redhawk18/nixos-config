@@ -23,6 +23,7 @@
 
         shellAliases = {
           ".." = "cd ..";
+          gc = "sudo nix-store --gc && sudo nix-collect-garbage -d";
           ll = "ls -lah";
           switch = "sudo nixos-rebuild switch";
           update = "sudo nixos-rebuild switch --upgrade";
@@ -132,7 +133,7 @@
 
     xdg = {
       # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
-       configFile."nvim".source = builtins.fetchGit {
+      configFile."nvim".source = builtins.fetchGit {
         url = "https://github.com/Redhawk18/neovim-config";
       };
     };
