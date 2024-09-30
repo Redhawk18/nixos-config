@@ -1,7 +1,6 @@
 {
-  services.sonarr = {
+  services.prowlarr = {
     enable = true;
     openFirewall = true;
-    user = "root";
   };
 }

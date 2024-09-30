@@ -56,11 +56,11 @@ in
   #    })
   #  ];
 
-  systemd.services = lib.attrsets.mergeAttrsList [
-    (MinecraftCustom {
-      name = "atm9";
-      cmd = "/var/lib/minecraft/atm9/run.sh";
-    })
-  ];
+  #  systemd.services = lib.attrsets.mergeAttrsList [
+  #    (MinecraftCustom {
+  #      name = "atm9";
+  #      cmd = "/var/lib/minecraft/atm9/run.sh";
+  #    })
+  #  ];
 
 }

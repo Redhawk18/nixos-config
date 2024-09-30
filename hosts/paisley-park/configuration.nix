@@ -13,7 +13,9 @@
     ./services/nfs.nix
     ./services/minecraft.nix
     ./services/plex.nix
+    ./services/prowlarr.nix
     ./services/qbittorrent-nox.nix
+    ./services/radarr.nix
     ./services/samba.nix
     ./services/sonarr.nix
     ./services/syncthing.nix

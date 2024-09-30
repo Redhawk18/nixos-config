@@ -12,7 +12,7 @@
       Type = "exec";
       ExecStart =
         "${pkgs.qbittorrent-nox}/bin/qbittorrent-nox --webui-port=8081";
-      User = "redhawk";
+      Restart = "always";
     };
 
     wantedBy = [ "multi-user.target" ];
