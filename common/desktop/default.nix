@@ -37,6 +37,7 @@
       kdePackages.yakuake
 
       audacious
+      chromium
       firefox
       monero-gui
       libreoffice-qt

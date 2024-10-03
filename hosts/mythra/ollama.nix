@@ -4,6 +4,10 @@
     environmentVariables = {
       HSA_OVERRIDE_GFX_VERSION = "10.1.0";
     };
+    home = "/home/ollama";
+    models = "/home/ollama/models";
+    writablePaths = [ "/home/ollama" ];
+    sandbox = false;
   };
 
   services.open-webui = {
@@ -13,8 +17,7 @@
     environment = {
       OLLAMA_API_BASE_URL = " http://127.0.0.1:11434 ";
       # Disable authentication
-      WEBUI_AUTH = "
-      False ";
+      WEBUI_AUTH = "False";
     };
   };
 }

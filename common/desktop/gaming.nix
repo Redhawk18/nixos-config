@@ -4,8 +4,13 @@ let
 in
 {
   config = lib.mkIf config.desktop.gaming {
-    programs.steam.enable = true;
-    programs.steam.gamescopeSession.enable = true;
+    programs.steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+
+      localNetworkGameTransfers.openFirewall = true;
+      remotePlay.openFirewall = true;
+    };
     programs.gamemode.enable = true;
 
     environment.systemPackages = with pkgs; [
