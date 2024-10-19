@@ -69,6 +69,7 @@
       "wheel"
     ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [ btop neovim swayidle starship ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArc36eLjL+5+WpkdTdQ6BFgmRyMA1uqMqCw7jIP/73O redhawk@Malos" ];
   };
 
   # Allow unfree packages
@@ -110,7 +111,7 @@
     docker = {
       enable = true;
       autoPrune.enable = true;
-      # daemon.settings = { data-root = "/home/redhawk/.local/state/"; };
+      daemon.settings = { data-root = "/home/docker"; };
     };
 
   };

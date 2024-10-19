@@ -44,6 +44,7 @@
       liberation_ttf
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       noto-fonts
+      obs-studio
       plexamp
       puddletag
       vesktop

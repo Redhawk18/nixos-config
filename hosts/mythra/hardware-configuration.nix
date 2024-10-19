@@ -70,8 +70,13 @@
 
   nixpkgs = {
     config.rocmSupport = true;
-    #    gcc.arch = "znver4";
-    #    gcc.tune = "znver4";
+    localSystem = {
+      # The system will take many hours and run out of space to rebuild with native support
+      #      gcc.arch = "znver4";
+      #      gcc.tune = "znver4";
+      system = "x86_64-linux";
+    };
+
     system = lib.mkDefault "x86_64-linux";
   };
 

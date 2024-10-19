@@ -69,6 +69,10 @@
           vscode-extensions.llvm-vs-code-extensions.vscode-clangd
           clang-tools
 
+          # docker
+          dockerfile-language-server-nodejs
+          docker-compose-language-service
+
           # lua
           luajitPackages.lua-lsp
 
@@ -115,6 +119,12 @@
             hostname = "paisley-park.lan";
             user = "redhawk";
             identityFile = "/home/redhawk/.ssh/keys/paisley-park";
+          };
+
+          aws = {
+            hostname = "52.203.95.222";
+            user = "ubuntu";
+            identityFile = "/home/redhawk/.ssh/keys/labsuser.pem";
           };
         };
       };
