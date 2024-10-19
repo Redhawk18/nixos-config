@@ -121,13 +121,13 @@
             identityFile = "/home/redhawk/.ssh/keys/paisley-park";
           };
 
-          aws1 = {
+          aws2 = {
             hostname = "52.203.95.222";
             user = "ubuntu";
             identityFile = "/home/redhawk/.ssh/keys/labsuser.pem";
           };
 
-          aws2 = {
+          aws1 = {
             hostname = "44.220.42.155";
             user = "ubuntu";
             identityFile = "/home/redhawk/.ssh/keys/labsuser.pem";
