@@ -13,9 +13,11 @@
   };
 
   outputs = { self, nixpkgs, ... } @ inputs: {
-    nixosConfigurations.mythra = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [ ./hosts/mythra/configuration.nix ];
+    nixosConfigurations = {
+      Mythra = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/mythra/configuration.nix ];
+      };
     };
   };
 }

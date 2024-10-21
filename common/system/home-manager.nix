@@ -1,6 +1,6 @@
-{ inputs, ... }: {
+{ config, inputs, ... }: {
   imports = [ inputs.home-manager.nixosModules.default ];
-  home-manager.users.redhawk = { config, lib, pkgs, ... }: {
+  home-manager.users.redhawk = { lib, pkgs, ... }: {
     home = {
       username = "redhawk";
       homeDirectory = "/home/redhawk";
@@ -25,8 +25,8 @@
           ".." = "cd ..";
           gc = "sudo nix-store --gc && sudo nix-collect-garbage -d";
           ll = "ls -lah";
-          switch = "sudo nixos-rebuild switch ";
-          update = "sudo nixos-rebuild switch  --upgrade";
+          switch = "sudo nixos-rebuild switch --flake .#${config.networking.hostName}";
+          update = "sudo nixos-rebuild switch --flake .#${config.networking.hostName} --upgrade";
         };
       };
 
