@@ -4,6 +4,7 @@
 
     ./clients/default.nix
     ./desktop/default.nix
+    ./programs/default.nix
     ./services/default.nix
     ./system/home-manager.nix
     ./system/nix.nix

@@ -20,6 +20,7 @@
     gaming = true;
     programming = true;
   };
+  nix-ld = true;
   printing = true;
   xmrig = true;
 

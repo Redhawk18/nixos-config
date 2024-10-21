@@ -1,5 +1,5 @@
-{
-  imports = [ <home-manager/nixos> ];
+{ inputs, ... }: {
+  imports = [ inputs.home-manager.nixosModules.default ];
   home-manager.users.redhawk = { config, lib, pkgs, ... }: {
     home = {
       username = "redhawk";
@@ -25,8 +25,8 @@
           ".." = "cd ..";
           gc = "sudo nix-store --gc && sudo nix-collect-garbage -d";
           ll = "ls -lah";
-          switch = "sudo nixos-rebuild switch";
-          update = "sudo nixos-rebuild switch --upgrade";
+          switch = "sudo nixos-rebuild switch ";
+          update = "sudo nixos-rebuild switch  --upgrade";
         };
       };
 
@@ -158,6 +158,7 @@
       # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
       configFile."nvim".source = builtins.fetchGit {
         url = "https://github.com/Redhawk18/neovim-config";
+        rev = "5d7952d6bb460a88d913e0e67bbe54985a9b2eff";
       };
     };
   };
