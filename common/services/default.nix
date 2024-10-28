@@ -1,5 +1,9 @@
-{ lib, ... }: {
-  imports = [ ./printing.nix ./xmrig.nix ];
+{ lib, ... }:
+{
+  imports = [
+    ./printing.nix
+    ./xmrig.nix
+  ];
 
   options = {
     printing = lib.mkEnableOption "enable printer services";

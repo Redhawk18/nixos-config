@@ -1,9 +1,13 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
 
   config = lib.mkIf config.nix-ld {
-    environment.systemPackages = with pkgs; [
-      nix-ld
-    ];
+    environment.systemPackages = with pkgs; [ nix-ld ];
 
     programs.nix-ld = {
       enable = true;

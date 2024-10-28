@@ -9,5 +9,5 @@
     ./system/home-manager.nix
     ./system/nix.nix
     ./system/system.nix
-    ];
+  ];
 }

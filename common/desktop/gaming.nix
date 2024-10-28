@@ -3,6 +3,7 @@
   inputs,
   lib,
   pkgs,
+  unstable,
   ...
 }:
 let
@@ -21,15 +22,11 @@ in
     programs.gamemode.enable = true;
 
     environment.systemPackages = with pkgs; [
-          lutris
+      unstable.edopro
+      lutris
       prismlauncher
       r2modman
-((pkgs.ryujinx.override {
-  buildDotnetModule = args: pkgs.buildDotnetModule (args // { nugetDeps = ./ryujinx_deps.nix; });
-}).overrideAttrs
-  (old: {
-    src = inputs.ryujinx; 
-  }))
+      unstable.ryujinx
       vesktop
     ];
 

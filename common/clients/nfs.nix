@@ -1,4 +1,5 @@
-{ config, lib, ... }: {
+{ config, lib, ... }:
+{
   config = lib.mkIf config.nfs {
     fileSystems."/mnt/paisley-park" = {
       device = "paisley-park.lan:/boundman/server_files";

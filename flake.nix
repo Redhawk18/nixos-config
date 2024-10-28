@@ -11,27 +11,60 @@
     };
 
     neovim-config = {
-          url = "github:redhawk18/neovim-config";
+      url = "github:redhawk18/neovim-config";
       flake = false;
     };
 
-    ryujinx = {
-        url = "github:ryujinx-mirror/ryujinx";
-        flake = false;
-
-};
   };
 
   outputs =
     { self, nixpkgs, ... }@inputs:
     {
       nixosConfigurations = {
+        Cinnamoroll = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            unstable = import inputs.nixos-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [ ./hosts/cinnamoroll/configuration.nix ];
+        };
+
+        Malos = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            unstable = import inputs.nixos-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [ ./hosts/malos/configuration.nix ];
+        };
+
         Mythra = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
+            unstable = import inputs.nixos-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
           };
           modules = [ ./hosts/mythra/configuration.nix ];
         };
+
+        Paisley-Park = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            unstable = import inputs.nixos-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [ ./hosts/paisley-park/configuration.nix ];
+        };
       };
+
     };
 }

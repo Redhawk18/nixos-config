@@ -1,6 +1,14 @@
-{ config, lib, pkgs, ... }:
 {
-  imports = [ ./gaming.nix ./programming.nix ];
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    ./gaming.nix
+    ./programming.nix
+  ];
 
   options = {
     desktop = {
@@ -9,7 +17,6 @@
       programming = lib.mkEnableOption "enable desktop programming";
     };
   };
-
 
   config = lib.mkIf config.desktop.enable {
     # Enable the X11 windowing system.
@@ -20,9 +27,7 @@
     services.displayManager.sddm.wayland.enable = true;
     services.desktopManager.plasma6.enable = true;
 
-    environment.plasma6.excludePackages = with pkgs.kdePackages; [
-      elisa
-    ];
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [ elisa ];
 
     environment.systemPackages = with pkgs; [
       kdePackages.akonadi

@@ -6,10 +6,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    (fetchTarball
-      "https://github.com/nix-community/nixos-vscode-server/tarball/master")
 
     ./services/adguardhome.nix
+# https://github.com/NixOS/nixpkgs/issues/332776
+#    ./services/flaresolverr.nix
     ./services/nfs.nix
     ./services/minecraft.nix
     ./services/plex.nix
@@ -64,8 +64,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -126,10 +124,7 @@
   # };
 
   # List services that you want to enable:
-  services = {
-    openssh.enable = true;
-    vscode-server.enable = true;
-  };
+  services.openssh.enable = true;
 
   systemd = {
     targets = {

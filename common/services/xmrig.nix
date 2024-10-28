@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   xmrig-pause = pkgs.writeShellScriptBin "xmrig-pause" ''
     curl -s --json '{"method": "pause", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc
@@ -42,6 +47,9 @@ in
         pause-on-battery = true;
       };
     };
-    environment.systemPackages = [ xmrig-pause xmrig-resume ];
+    environment.systemPackages = [
+      xmrig-pause
+      xmrig-resume
+    ];
   };
 }
