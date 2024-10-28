@@ -52,6 +52,10 @@
     ];
 
     programs = {
+      appimage = {
+        enable = true;
+        binfmt = true;
+      };
       dconf.enable = true;
 
       firefox = {

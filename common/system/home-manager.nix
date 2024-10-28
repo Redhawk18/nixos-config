@@ -26,7 +26,7 @@
           gc = "sudo nix-store --gc && sudo nix-collect-garbage -d";
           ll = "ls -lah";
           switch = "sudo nixos-rebuild switch --flake .#${config.networking.hostName}";
-          update = "sudo nixos-rebuild switch --flake .#${config.networking.hostName} --upgrade";
+          update = "nix flake update";
         };
       };
 
@@ -78,7 +78,7 @@
 
           # nix
           nixd
-          nixpkgs-fmt
+          nixfmt-rfc-style
 
           # python
           pyright
@@ -128,13 +128,13 @@
           };
 
           aws1 = {
-            hostname = "44.220.42.155";
+            hostname = "44.211.98.185";
             user = "ubuntu";
             identityFile = "/home/redhawk/.ssh/keys/labsuser.pem";
           };
 
           aws3 = {
-            hostname = "54.224.121.97";
+            hostname = "52.90.215.145";
             user = "ubuntu";
             identityFile = "/home/redhawk/.ssh/keys/labsuser.pem";
           };
@@ -155,11 +155,8 @@
     };
 
     xdg = {
-      # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
-      configFile."nvim".source = builtins.fetchGit {
-        url = "https://github.com/Redhawk18/neovim-config";
-        rev = "5d7952d6bb460a88d913e0e67bbe54985a9b2eff";
-      };
+      configFile."nvim".source = "/home/redhawk/code/neovim-config/";
+            #      configFile."nvim".source = inputs.neovim-config; 
     };
   };
 }

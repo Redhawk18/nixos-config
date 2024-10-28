@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 let
   user = "redhawk";
 in
@@ -6,6 +12,7 @@ in
   config = lib.mkIf config.desktop.gaming {
     programs.steam = {
       enable = true;
+      extraPackages = with pkgs; [ fuse ];
       gamescopeSession.enable = true;
 
       localNetworkGameTransfers.openFirewall = true;
@@ -14,10 +21,15 @@ in
     programs.gamemode.enable = true;
 
     environment.systemPackages = with pkgs; [
-      # (lutris.override { extraLibraries = pkgs: [ ]; })
+          lutris
       prismlauncher
       r2modman
-      ryujinx
+((pkgs.ryujinx.override {
+  buildDotnetModule = args: pkgs.buildDotnetModule (args // { nugetDeps = ./ryujinx_deps.nix; });
+}).overrideAttrs
+  (old: {
+    src = inputs.ryujinx; 
+  }))
       vesktop
     ];
 

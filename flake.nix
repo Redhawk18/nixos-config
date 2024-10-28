@@ -10,14 +10,28 @@
       inputs.nixpkgs.follows = "nixos";
     };
 
+    neovim-config = {
+          url = "github:redhawk18/neovim-config";
+      flake = false;
+    };
+
+    ryujinx = {
+        url = "github:ryujinx-mirror/ryujinx";
+        flake = false;
+
+};
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs: {
-    nixosConfigurations = {
-      Mythra = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [ ./hosts/mythra/configuration.nix ];
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    {
+      nixosConfigurations = {
+        Mythra = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [ ./hosts/mythra/configuration.nix ];
+        };
       };
     };
-  };
 }

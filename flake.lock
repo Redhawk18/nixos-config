@@ -21,13 +21,29 @@
         "type": "github"
       }
     },
+    "neovim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730128111,
+        "narHash": "sha256-8F1WOnsHUl/BdpZ9KPZIEIYazuBrm8itwlQzOzFr0ZA=",
+        "owner": "redhawk18",
+        "repo": "neovim-config",
+        "rev": "8d9149070399d4fd1540960776977de95689bed0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "redhawk18",
+        "repo": "neovim-config",
+        "type": "github"
+      }
+    },
     "nixos": {
       "locked": {
-        "lastModified": 1729181673,
-        "narHash": "sha256-LDiPhQ3l+fBjRATNtnuDZsBS7hqoBtPkKBkhpoBHv3I=",
+        "lastModified": 1729973466,
+        "narHash": "sha256-knnVBGfTCZlQgxY1SgH0vn2OyehH9ykfF8geZgS95bk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4eb33fe664af7b41a4c446f87d20c9a0a6321fa3",
+        "rev": "cd3e8833d70618c4eea8df06f95b364b016d4950",
         "type": "github"
       },
       "original": {
@@ -39,11 +55,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1729256560,
-        "narHash": "sha256-/uilDXvCIEs3C9l73JTACm4quuHUsIHcns1c+cHUJwA=",
+        "lastModified": 1729880355,
+        "narHash": "sha256-RP+OQ6koQQLX5nw0NmcDrzvGL8HDLnyXt/jHhL1jwjM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4c2fcb090b1f3e5b47eaa7bd33913b574a11e0a0",
+        "rev": "18536bf04cd71abd345f9579158841376fdd0c5a",
         "type": "github"
       },
       "original": {
@@ -68,9 +84,27 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "neovim-config": "neovim-config",
         "nixos": "nixos",
         "nixos-unstable": "nixos-unstable",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "ryujinx": "ryujinx"
+      }
+    },
+    "ryujinx": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1729786606,
+        "narHash": "sha256-nGX4oWbuJhVf54PrvMuX/AB+AxKSlm3Drs1RP3wIqYQ=",
+        "owner": "ryujinx-mirror",
+        "repo": "ryujinx",
+        "rev": "fec4f4ada9f28f897457033f9954c84cc15d0b02",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryujinx-mirror",
+        "repo": "ryujinx",
+        "type": "github"
       }
     }
   },
