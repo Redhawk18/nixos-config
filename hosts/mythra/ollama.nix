@@ -1,9 +1,6 @@
 {
   services.ollama = {
     enable = true;
-    environmentVariables = {
-      HSA_OVERRIDE_GFX_VERSION = "10.1.0";
-    };
     home = "/home/ollama";
     models = "/home/ollama/models";
     writablePaths = [ "/home/ollama" ];
