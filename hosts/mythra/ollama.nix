@@ -3,8 +3,8 @@
     enable = true;
     home = "/home/ollama";
     models = "/home/ollama/models";
-    writablePaths = [ "/home/ollama" ];
-    sandbox = false;
+    #    writablePaths = [ "/home/ollama" ];
+    #    sandbox = false;
   };
 
   services.open-webui = {

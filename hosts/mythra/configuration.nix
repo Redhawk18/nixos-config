@@ -2,7 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -55,7 +60,7 @@
 
   # Enable sound.
   # sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  #  hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -69,8 +74,15 @@
       "systemd-journal"
       "wheel"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ btop neovim swayidle starship ];
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArc36eLjL+5+WpkdTdQ6BFgmRyMA1uqMqCw7jIP/73O redhawk@Malos" ];
+    packages = with pkgs; [
+      btop
+      neovim
+      swayidle
+      starship
+    ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArc36eLjL+5+WpkdTdQ6BFgmRyMA1uqMqCw7jIP/73O redhawk@Malos"
+    ];
   };
 
   # Allow unfree packages
@@ -112,7 +124,9 @@
     docker = {
       enable = true;
       autoPrune.enable = true;
-      daemon.settings = { data-root = "/home/docker"; };
+      daemon.settings = {
+        data-root = "/home/docker";
+      };
     };
 
   };
@@ -147,4 +161,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

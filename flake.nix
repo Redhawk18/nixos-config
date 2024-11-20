@@ -2,12 +2,12 @@
   description = "System flake";
 
   inputs = {
-    nixos.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     neovim-config = {
@@ -24,7 +24,7 @@
         Cinnamoroll = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
-            unstable = import inputs.nixos-unstable {
+            unstable = import inputs.nixpkgs-unstable {
               system = "x86_64-linux";
               config.allowUnfree = true;
             };
@@ -35,7 +35,7 @@
         Malos = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
-            unstable = import inputs.nixos-unstable {
+            unstable = import inputs.nixpkgs-unstable {
               system = "x86_64-linux";
               config.allowUnfree = true;
             };
@@ -46,7 +46,7 @@
         Mythra = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
-            unstable = import inputs.nixos-unstable {
+            unstable = import inputs.nixpkgs-unstable {
               system = "x86_64-linux";
               config.allowUnfree = true;
             };
@@ -57,7 +57,7 @@
         Paisley-Park = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
-            unstable = import inputs.nixos-unstable {
+            unstable = import inputs.nixpkgs-unstable {
               system = "x86_64-linux";
               config.allowUnfree = true;
             };
