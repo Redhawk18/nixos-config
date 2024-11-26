@@ -8,10 +8,9 @@
 
   config = lib.mkIf config.desktop.programming {
     environment.systemPackages = with pkgs; [
-      vscode
-      distrobox
+      dbeaver-bin
       jetbrains.idea-ultimate
-      insomnia
+      vscode
     ];
   };
 }

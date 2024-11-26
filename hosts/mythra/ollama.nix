@@ -1,10 +1,18 @@
+{ config, ... }:
 {
   services.ollama = {
     enable = true;
-    home = "/home/ollama";
-    models = "/home/ollama/models";
-    #    writablePaths = [ "/home/ollama" ];
-    #    sandbox = false;
+    openFirewall = true;
+    user = "ollama";
+    group = "ollama";
+    # home = "/home/ollama";
+    # models = "${config.services.ollama.home}/models";
+    loadModels = [
+      "openchat"
+      "codellama"
+    ];
+
+    rocmOverrideGfx = "11.0.0";
   };
 
   services.open-webui = {

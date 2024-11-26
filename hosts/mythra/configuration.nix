@@ -59,8 +59,7 @@
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable sound.
-  # sound.enable = true;
-  #  hardware.pulseaudio.enable = true;
+  services.pipewire.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -80,9 +79,7 @@
       swayidle
       starship
     ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArc36eLjL+5+WpkdTdQ6BFgmRyMA1uqMqCw7jIP/73O redhawk@Malos"
-    ];
+    openssh.authorizedKeys.keys = [ ];
   };
 
   # Allow unfree packages

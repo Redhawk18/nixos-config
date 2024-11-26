@@ -78,6 +78,10 @@
             dockerfile-language-server-nodejs
             docker-compose-language-service
 
+            # javascript
+            nodePackages.typescript-language-server
+            nodePackages.svelte-language-server
+
             # lua
             luajitPackages.lua-lsp
 
