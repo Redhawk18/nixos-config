@@ -79,6 +79,7 @@
             docker-compose-language-service
 
             # javascript
+            vscode-langservers-extracted
             nodePackages.typescript-language-server
             nodePackages.svelte-language-server
 
