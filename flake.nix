@@ -10,11 +10,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-minecraft.url = "github:infinidoge/nix-minecraft";
+
     neovim-config = {
       url = "github:redhawk18/neovim-config";
       flake = false;
     };
 
+    nur-xddxdd.url = "github:xddxdd/nur-packages";
   };
 
   outputs =
@@ -57,6 +60,7 @@
         Paisley-Park = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
+            nur-xddxdd = import inputs.nur-xddxdd { };
             unstable = import inputs.nixpkgs-unstable {
               system = "x86_64-linux";
               config.allowUnfree = true;

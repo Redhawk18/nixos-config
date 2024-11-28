@@ -1,66 +1,34 @@
-{ lib, pkgs, ... }:
-let
-  MinecraftVanilla = { name, memory }: {
-    "minecraft-${name}" = {
-      enable = true;
-      unitConfig = {
-        Description = "${name} minecraft server";
-        Wants = "network-online.target";
-        After = "network-online.target";
-      };
-
-      serviceConfig = {
-        User = "minecraft";
-        Group = "minecraft";
-        StateDirectory = "minecraft/${name}";
-        StateDirectoryMode = "0775";
-        WorkingDirectory = "%S/minecraft/${name}";
-        ExecStart =
-          "${pkgs.jdk17}/bin/java -Xmx${memory}G -Xms1G -jar server.jar";
-      };
-
-      wantedBy = [ "multi-user.target" ];
-    };
-  };
-  # For modded worlds or anything that isn't run with the normal server command.
-  MinecraftCustom = { name, cmd }: {
-    "minecraft-${name}" = {
-      enable = true;
-      unitConfig = {
-        Description = "${name} minecraft server";
-        Wants = "network-online.target";
-        After = "network-online.target";
-      };
-
-      serviceConfig = {
-        User = "minecraft";
-        Group = "minecraft";
-        StateDirectory = "minecraft/${name}";
-        StateDirectoryMode = "0775";
-        WorkingDirectory = "%S/minecraft/${name}";
-        ExecStart = cmd;
-      };
-
-      path = with pkgs; [ bash jdk17 ];
-
-
-      wantedBy = [ "multi-user.target" ];
-    };
-  };
-in
+{ inputs, pkgs, ... }:
 {
-  #  systemd.services = lib.attrsets.mergeAttrsList [
-  #    (MinecraftVanilla {
-  #      name = "1.20-World";
-  #      memory = "4";
-  #    })
-  #  ];
+  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
-  #  systemd.services = lib.attrsets.mergeAttrsList [
-  #    (MinecraftCustom {
-  #      name = "atm9";
-  #      cmd = "/var/lib/minecraft/atm9/run.sh";
-  #    })
-  #  ];
+  services.minecraft-servers = {
+    enable = true;
+    eula = true;
+    openFirewall = true;
+    dataDir = "/var/lib/minecraft/";
 
+    servers = {
+      "1.21-World" = {
+        enable = true;
+        package = pkgs.minecraftServers.vanilla-1_21_3;
+        jvmOpts = "-Xms1G -Xmx8G";
+
+        serverProperties = {
+          difficulty = "hard";
+          enforce-whitelist = true;
+          level-name = "1.21-World";
+          level-seed = 7025192174381717753;
+          motd = "A thankful server";
+          server-ip = "paisley-park.lan";
+          server-port = 25565;
+          simulation-distance = 14;
+          spawn-protection = 0;
+          view-distance = 12;
+          white-list = true;
+        };
+      };
+    };
+  };
 }
