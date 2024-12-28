@@ -10,7 +10,7 @@
 
     ./services/adguardhome.nix
     # https://github.com/NixOS/nixpkgs/issues/332776
-    ./services/flaresolverr.nix
+    # ./services/flaresolverr.nix
     ./services/nfs.nix
     ./services/minecraft.nix
     ./services/plex.nix
