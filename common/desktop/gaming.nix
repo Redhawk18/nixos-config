@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   unstable,
@@ -23,11 +22,10 @@ in
 
     environment.systemPackages = with pkgs; [
       unstable.edopro
+      gale
       lutris
       prismlauncher
-      r2modman
       unstable.ryujinx
-      vesktop
     ];
 
     services.syncthing = {

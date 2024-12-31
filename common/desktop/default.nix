@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  unstable,
   ...
 }:
 {
@@ -52,7 +53,7 @@
       obs-studio
       plexamp
       puddletag
-      vesktop
+      unstable.vesktop
       vlc
     ];
 

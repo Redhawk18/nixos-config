@@ -9,7 +9,7 @@ let
     curl -s --json '{"method": "pause", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc
   '';
 
-  xmrig-resume = pkgs.writeShellScriptBin "xmrig-pause" ''
+  xmrig-resume = pkgs.writeShellScriptBin "xmrig-resume" ''
     curl -s --json '{"method": "resume", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc
   '';
 in
