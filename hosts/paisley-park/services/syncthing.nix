@@ -19,10 +19,28 @@
     };
 
     folders = {
-      # https://github.com/Ryujinx/Ryujinx/issues/3975#issuecomment-2002290391
+      "geometry-dash" = {
+        path = "~/geometry-dash";
+        devices = [
+          "Mythra"
+          "steamdeck"
+        ];
+        versioning = {
+          type = "simple";
+          params = {
+            keep = "3";
+            cleanoutDays = "14";
+          };
+        };
+
+      };
+
       "ryujinx" = {
         path = "~/ryujinx";
-        devices = [ "Mythra" "steamdeck" ];
+        devices = [
+          "Mythra"
+          "steamdeck"
+        ];
         versioning = {
           type = "simple";
           params = {
@@ -34,7 +52,10 @@
 
       "unrailed" = {
         path = "~/unrailed";
-        devices = [ "Mythra" "steamdeck" ];
+        devices = [
+          "Mythra"
+          "steamdeck"
+        ];
         versioning = {
           type = "simple";
           params = {
