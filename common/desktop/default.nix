@@ -54,6 +54,7 @@
       plexamp
       puddletag
       unstable.vesktop
+      slack
       vlc
     ];
 
