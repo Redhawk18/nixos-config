@@ -16,6 +16,7 @@
   desktop = {
     enable = true;
     gaming = true;
+    programming = true;
   };
   printing = true;
 
@@ -52,8 +53,7 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  services.pipewire.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
