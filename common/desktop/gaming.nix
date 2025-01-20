@@ -23,7 +23,7 @@ in
     environment.systemPackages = with pkgs; [
       unstable.edopro
       gale
-      lutris
+      # lutris
       prismlauncher
       unstable.ryujinx
     ];
@@ -37,7 +37,8 @@ in
       dataDir = "/home/${user}";
       configDir = "/home/${user}/.config";
 
-      settings.devices."Paisley-Park".id = "HYS7CC6-I4BKAQL-ZIZL23L-LQR5PK6-OJ2HGVW-HQU64QD-UQQLDTQ-JXPZSAG";
+      settings.devices."Paisley-Park".id =
+        "HYS7CC6-I4BKAQL-ZIZL23L-LQR5PK6-OJ2HGVW-HQU64QD-UQQLDTQ-JXPZSAG";
     };
 
     networking.firewall = {

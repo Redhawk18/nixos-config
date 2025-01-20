@@ -53,7 +53,7 @@
       obs-studio
       plexamp
       puddletag
-      unstable.vesktop
+      vesktop
       slack
       vlc
     ];
