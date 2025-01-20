@@ -11,10 +11,7 @@
     ./system/networking.nix
     ./system/users.nix
 
-    ../common/services/xmrig.nix
-    ../common/system/home-manager.nix
-    ../common/system/nix.nix
-    ../common/system/system.nix
+    ../../common/default.nix
   ];
 
   # Set your time zone.
@@ -50,8 +47,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
