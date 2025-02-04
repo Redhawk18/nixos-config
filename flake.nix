@@ -68,6 +68,18 @@
           };
           modules = [ ./hosts/paisley-park/configuration.nix ];
         };
+
+        WSL = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            unstable = import inputs.nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [ ./hosts/wsl/configuration.nix ];
+        };
+
       };
 
     };

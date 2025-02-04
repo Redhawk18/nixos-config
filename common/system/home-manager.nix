@@ -61,7 +61,7 @@
             wl-clipboard
             xclip
 
-            # runtimes 
+            # runtimes
             nodejs
             python3
 
@@ -131,24 +131,11 @@
               identityFile = "/home/redhawk/.ssh/keys/paisley-park";
             };
 
-            aws2 = {
-              hostname = "52.203.95.222";
-              user = "ubuntu";
-              identityFile = "/home/redhawk/.ssh/keys/labsuser.pem";
+            fry = {
+              hostname = "fry.cs.wright.edu";
+              user = "w180cxr";
+              identityFile = "/home/redhawk/.ssh/keys/fry";
             };
-
-            aws1 = {
-              hostname = "44.211.98.185";
-              user = "ubuntu";
-              identityFile = "/home/redhawk/.ssh/keys/labsuser.pem";
-            };
-
-            aws3 = {
-              hostname = "52.90.215.145";
-              user = "ubuntu";
-              identityFile = "/home/redhawk/.ssh/keys/labsuser.pem";
-            };
-
           };
         };
       };
