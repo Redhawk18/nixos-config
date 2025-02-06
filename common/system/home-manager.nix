@@ -138,6 +138,8 @@
             };
           };
         };
+
+        starship.enable = true;
       };
 
       services.swayidle = {

@@ -18,10 +18,17 @@
     };
 
     nur-xddxdd.url = "github:xddxdd/nur-packages";
+
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      nixos-wsl,
+      ...
+    }@inputs:
     {
       nixosConfigurations = {
         Cinnamoroll = nixpkgs.lib.nixosSystem {
@@ -71,7 +78,7 @@
 
         WSL = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs;
+            inherit inputs nixos-wsl;
             unstable = import inputs.nixpkgs-unstable {
               system = "x86_64-linux";
               config.allowUnfree = true;
