@@ -20,6 +20,7 @@
           '';
 
           sessionVariables = {
+            NIXPKGS_ALLOW_INSECURE = 1;
             NIXPKGS_ALLOW_UNFREE = 1;
             CODELLDB_PATH = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/";
           };

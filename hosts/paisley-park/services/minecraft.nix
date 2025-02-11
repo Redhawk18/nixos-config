@@ -12,7 +12,7 @@
     servers = {
       "1.21-World" = {
         enable = true;
-        package = pkgs.minecraftServers.vanilla-1_21_3;
+        package = pkgs.minecraftServers.vanilla-1_21_4;
         jvmOpts = "-Xms1G -Xmx8G";
 
         serverProperties = {
@@ -23,9 +23,9 @@
           motd = "A thankful server";
           server-ip = "paisley-park.lan";
           server-port = 25565;
-          simulation-distance = 14;
+          simulation-distance = 18;
           spawn-protection = 0;
-          view-distance = 12;
+          view-distance = 16;
           white-list = true;
         };
       };
