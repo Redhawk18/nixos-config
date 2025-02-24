@@ -137,6 +137,13 @@
               user = "w180cxr";
               identityFile = "/home/redhawk/.ssh/keys/fry";
             };
+
+            pitzer = {
+              hostname = "pitzer.osc.edu";
+              user = "crange";
+              identityFile = "/home/redhawk/.ssh/keys/pitzer";
+            };
+
           };
         };
 
