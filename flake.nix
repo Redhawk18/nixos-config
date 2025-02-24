@@ -42,6 +42,17 @@
           modules = [ ./hosts/cinnamoroll/configuration.nix ];
         };
 
+        Nia = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            unstable = import inputs.nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [ ./hosts/nia/configuration.nix ];
+        };
+
         Malos = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
