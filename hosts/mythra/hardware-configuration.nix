@@ -34,16 +34,10 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/e9bd5b78-1932-4dfc-9776-eb77c378111d";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/c9785683-2767-45a4-8b08-72e8bbfa1baf";
+    fsType = "btrfs";
+    options = [ "compress=zstd" ];
   };
-
-  #   fileSystems."/" = {
-  #     device = "/dev/disk/by-uuid/";
-  #     fsType = "btrfs";
-  #     options = [ "compress=zstd" ];
-
-  #   };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/DE25-82E4";
