@@ -20,17 +20,15 @@
     ./services/samba.nix
     ./services/sonarr.nix
     ./services/syncthing.nix
-    ./services/xmrig.nix
 
     ./system/boot.nix
     ./system/networking.nix
     ./system/users.nix
     ./system/zfs.nix
 
-    ../../common/system/home-manager.nix
-    ../../common/system/nix.nix
-    ../../common/system/system.nix
+    ../../common/default.nix
   ];
+  xmrig = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
