@@ -10,6 +10,7 @@
     git
     home-manager
     neovim
+    screen
     wget
   ];
 

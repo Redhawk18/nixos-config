@@ -1,6 +1,9 @@
 { config, inputs, ... }:
 {
   imports = [ inputs.home-manager.nixosModules.default ];
+
+  # nixpkgs.overlays = [ inputs.rustowl.overlays.default ];
+
   home-manager.users.redhawk =
     { lib, pkgs, ... }:
     {
@@ -9,6 +12,12 @@
         homeDirectory = "/home/redhawk";
         stateVersion = "24.05";
       };
+
+      nixpkgs.overlays = [
+        inputs.rustowl.overlays.default
+        inputs.fenix.overlays.default
+      ];
+
       programs = {
         home-manager.enable = true;
 
@@ -100,6 +109,8 @@
             rustup
             rust-analyzer
             vscode-extensions.vadimcn.vscode-lldb
+            rustowl
+
           ];
         };
 
