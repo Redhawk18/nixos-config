@@ -2,7 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -19,6 +24,19 @@
     programming = true;
   };
   printing = true;
+
+  fileSystems."/mnt/mythra" = {
+    device = "mythra.lan:/home/redhawk";
+    fsType = "nfs";
+    options = [
+      "noauto"
+      "nofail"
+      "rsize=1048576"
+      "wsize=1048576"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=300"
+    ];
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -67,7 +85,12 @@
       "systemd-journal"
       "wheel"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ btop neovim swayidle starship ];
+    packages = with pkgs; [
+      btop
+      neovim
+      swayidle
+      starship
+    ];
   };
 
   # Allow unfree packages
@@ -120,4 +143,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

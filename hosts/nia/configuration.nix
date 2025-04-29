@@ -26,6 +26,19 @@
   nix-ld = true;
   printing = true;
 
+  fileSystems."/mnt/mythra" = {
+    device = "mythra.lan:/home/redhawk";
+    fsType = "nfs";
+    options = [
+      "noauto"
+      "nofail"
+      "rsize=1048576"
+      "wsize=1048576"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=300"
+    ];
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
