@@ -109,7 +109,7 @@
             rustup
             rust-analyzer
             vscode-extensions.vadimcn.vscode-lldb
-            rustowl
+            # rustowl
 
           ];
         };

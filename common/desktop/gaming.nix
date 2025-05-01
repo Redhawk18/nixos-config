@@ -22,7 +22,8 @@ in
 
     environment.systemPackages = with pkgs; [
       unstable.edopro
-      gale
+      unstable.gale
+      unstable.r2modman
       # lutris
       prismlauncher
       unstable.ryujinx
