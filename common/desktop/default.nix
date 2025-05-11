@@ -48,14 +48,18 @@
       monero-gui
       libreoffice-qt
       liberation_ttf
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-      noto-fonts
       obs-studio
       plexamp
       puddletag
       vesktop
       slack
       vlc
+    ];
+
+    fonts.enableDefaultPackages = true;
+    fonts.packages = with pkgs; [
+      nerd-fonts.symbols-only
+      noto-fonts
     ];
 
     programs = {
