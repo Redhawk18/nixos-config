@@ -53,6 +53,7 @@
       obs-studio
       plexamp
       puddletag
+      qbittorrent
       vesktop
       slack
       vlc

@@ -102,6 +102,17 @@
           modules = [ ./hosts/paisley-park/configuration.nix ];
         };
 
+        Shulk = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            unstable = import inputs.nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [ ./hosts/shulk/configuration.nix ];
+        };
+
         WSL = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs nixos-wsl;
