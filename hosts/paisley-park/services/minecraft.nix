@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  ...
+}:
 {
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
@@ -29,6 +33,40 @@
           white-list = true;
         };
       };
+
+      big-chad-guys-2 = {
+        enable = true;
+        package = pkgs.fabricServers.fabric-1_20_1;
+        jvmOpts = "-Xms2G -Xmx16G";
+
+        serverProperties = {
+          allowFlight = true;
+          difficulty = "hard";
+          enforce-whitelist = true;
+          level-name = "bigChadGuys2";
+          motd = "A Strawberryrkc Summer";
+          pvp = false;
+          server-ip = "paisley-park.lan";
+          server-port = 25566;
+          simulation-distance = 14;
+          spawn-protection = 0;
+          view-distance = 12;
+          white-list = true;
+        };
+
+        symlinks =
+          let
+            modpack = pkgs.fetchzip {
+              url = "https://mediafilez.forgecdn.net/files/5710/212/BCG%2B%20NC%202.7.1%20Server%20Files.zip";
+              hash = "sha256-qIw02IU2kOCINEsQqAAwKXrCJmeoxQtxFNcYif4bm3Y=";
+              stripRoot = false;
+            };
+          in
+          {
+            "mods" = "${modpack}/mods";
+          };
+      };
+
     };
   };
 
