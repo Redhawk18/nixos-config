@@ -14,8 +14,8 @@
       };
 
       nixpkgs.overlays = [
-        inputs.rustowl.overlays.default
-        inputs.fenix.overlays.default
+        # inputs.rustowl.overlays.default
+        # inputs.fenix.overlays.default
       ];
 
       programs = {
@@ -109,7 +109,6 @@
             rustup
             rust-analyzer
             vscode-extensions.vadimcn.vscode-lldb
-            # rustowl
 
           ];
         };
