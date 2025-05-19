@@ -16,7 +16,6 @@
 {
   imports = [
     # include NixOS-WSL modules
-    # <nixos-wsl/modules>
     nixos-wsl.nixosModules.default
     ../../common/default.nix
   ];
@@ -24,6 +23,35 @@
   wsl.enable = true;
   wsl.defaultUser = "redhawk";
   wsl.wslConf.network.hostname = "WSL";
+
+  environment.systemPackages = with pkgs; [
+    awscli2
+    dbeaver-bin
+    nodejs
+    python3
+    sqlitebrowser
+  ];
+
+  users = {
+    users = {
+      redhawk = {
+        isNormalUser = true;
+        description = "Redhawk";
+        extraGroups = [
+          "docker"
+        ];
+        openssh.authorizedKeys.keys = [ ];
+      };
+    };
+  };
+
+  virtualisation = {
+    containers.enable = true;
+    docker = {
+      enable = true;
+      autoPrune.enable = true;
+    };
+  };
 
   nixpkgs.system = lib.mkDefault "x86_64-linux";
 
