@@ -103,7 +103,7 @@
     neofetch
     neovim
     nfs-utils
-    nvtop
+    nvtopPackages.full
     openssh
     plex
     qbittorrent-nox
