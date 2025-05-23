@@ -43,6 +43,7 @@
       kdePackages.yakuake
 
       audacious
+      calibre
       chromium
       firefox
       monero-gui
