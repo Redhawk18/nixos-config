@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
 
     ./services/adguardhome.nix
+    ./services/calibre.nix
     # https://github.com/NixOS/nixpkgs/issues/332776
     # ./services/flaresolverr.nix
     ./services/nfs.nix

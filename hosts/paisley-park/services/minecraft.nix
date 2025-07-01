@@ -15,7 +15,7 @@
 
     servers = {
       "1.21-World" = {
-        enable = true;
+        enable = false;
         package = pkgs.minecraftServers.vanilla-1_21_4;
         jvmOpts = "-Xms1G -Xmx8G";
 
@@ -35,7 +35,7 @@
       };
 
       big-chad-guys-2 = {
-        enable = true;
+        enable = false;
         package = pkgs.fabricServers.fabric-1_20_1;
         jvmOpts = "-Xms2G -Xmx16G";
 
