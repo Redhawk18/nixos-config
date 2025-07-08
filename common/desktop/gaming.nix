@@ -27,6 +27,7 @@ in
       # lutris
       prismlauncher
       unstable.ryujinx
+
     ];
 
     services.syncthing = {

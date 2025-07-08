@@ -16,7 +16,7 @@ in
 {
   config = lib.mkIf config.xmrig {
     services.xmrig = {
-      enable = true;
+      enable = false;
       package = pkgs.xmrig-mo;
       settings = {
         autosave = true;

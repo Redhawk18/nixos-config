@@ -8,6 +8,7 @@
     docker-compose
     fd
     git
+    gh
     home-manager
     neovim
     screen
