@@ -57,7 +57,7 @@
         git = {
           enable = true;
           userName = "Redhawk18";
-          userEmail = "redhawk76767676@gmail.com";
+          userEmail = "77415970+Redhawk18@users.noreply.github.com";
         };
 
         neovim = {
