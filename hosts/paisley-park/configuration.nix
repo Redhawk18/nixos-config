@@ -10,10 +10,10 @@
 
     ./services/adguardhome.nix
     ./services/calibre.nix
-    # https://github.com/NixOS/nixpkgs/issues/332776
-    # ./services/flaresolverr.nix
-    ./services/nfs.nix
+    ./services/flaresolverr.nix
+    ./services/forgejo.nix
     ./services/minecraft.nix
+    ./services/nfs.nix
     ./services/plex.nix
     ./services/prowlarr.nix
     ./services/qbittorrent-nox.nix
