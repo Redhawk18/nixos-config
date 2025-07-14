@@ -18,15 +18,13 @@
     # Enables wireless support via wpa_supplicant.
     # networking.wireless.enable = true;
 
-    wireless.iwd = { 
+    wireless.iwd = {
       enable = true;
 
-      settings.Settings = {
-        AutoConnect = true;
-      };
-        
+      settings.Settings = { AutoConnect = true; };
+
     };
-    
+
   };
 
 }

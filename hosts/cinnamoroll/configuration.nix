@@ -11,6 +11,17 @@
     ./system/networking.nix
     ./system/users.nix
 
+    ./services/adguardhome.nix
+    ./services/flaresolverr.nix
+    ./services/nfs.nix
+    ./services/plex.nix
+    ./services/prowlarr.nix
+    ./services/qbittorrent-nox.nix
+    ./services/radarr.nix
+    ./services/samba.nix
+    ./services/sonarr.nix
+    ./services/syncthing.nix
+
     ../../common/default.nix
   ];
 

@@ -4,28 +4,32 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "usbhid" "ums_realtek" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "ehci_pci" "ahci" "usbhid" "ums_realtek" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/99ef57cc-786d-42cf-bda8-43bb6ac2c708";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/99ef57cc-786d-42cf-bda8-43bb6ac2c708";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8B3D-B06F";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/8B3D-B06F";
+    fsType = "vfat";
+  };
+
+  fileSystems."/mnt/media" = {
+    device = "/dev/disk/by-uuid/ba705981-2940-4b2a-9dac-cf2b58aa2a71";
+    fsType = "ext4";
+    options = [ "nofail" ];
+  };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/298ca0a0-5916-4b94-bb27-d47727bb597e"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/298ca0a0-5916-4b94-bb27-d47727bb597e"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -36,5 +40,6 @@
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
