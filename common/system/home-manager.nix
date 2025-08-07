@@ -60,6 +60,10 @@
           userEmail = "redhawk76767676@gmail.com";
         };
 
+        helix = {
+          enable = false;
+        };
+
         neovim = {
           enable = true;
           defaultEditor = true;

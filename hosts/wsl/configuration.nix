@@ -25,10 +25,13 @@
   wsl.wslConf.network.hostname = "WSL";
 
   environment.systemPackages = with pkgs; [
+    act
     awscli2
     dbeaver-bin
     nodejs
     python3
+    python3Packages.pip
+    python3Packages.unittest2
     sqlitebrowser
   ];
 
