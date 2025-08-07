@@ -28,10 +28,11 @@
     act
     awscli2
     dbeaver-bin
+    gcc
+    gnumake
     nodejs
     python3
     python3Packages.pip
-    python3Packages.unittest2
     sqlitebrowser
   ];
 
