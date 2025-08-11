@@ -30,6 +30,7 @@
     dbeaver-bin
     gcc
     gnumake
+    just
     nodejs
     python3
     python3Packages.pip
