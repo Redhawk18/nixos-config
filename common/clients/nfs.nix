@@ -12,6 +12,7 @@
         "wsize=1048576"
         "x-systemd.automount"
         "x-systemd.idle-timeout=300"
+        "x-systemd.after=network-online.target"
       ];
     };
   };
