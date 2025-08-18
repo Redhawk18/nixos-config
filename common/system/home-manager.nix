@@ -146,6 +146,12 @@
               identityFile = "/home/redhawk/.ssh/keys/paisley-park";
             };
 
+            forgejo = {
+              hostname = "paisley-park.lan";
+              user = "forgejo";
+              identityFile = "/home/redhawk/.ssh/keys/paisley-park";
+            };
+
             fry = {
               hostname = "fry.cs.wright.edu";
               user = "w180cxr";

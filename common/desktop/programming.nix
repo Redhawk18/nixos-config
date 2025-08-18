@@ -10,6 +10,7 @@
     environment.systemPackages = with pkgs; [
       blender
       dbeaver-bin
+      inlyne
       jetbrains.idea-ultimate
       neovim
       vscode
