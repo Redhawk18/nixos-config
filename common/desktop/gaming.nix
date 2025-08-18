@@ -26,7 +26,7 @@ in
       unstable.r2modman
       # lutris
       prismlauncher
-      unstable.ryujinx
+      unstable.ryubing
 
     ];
 
