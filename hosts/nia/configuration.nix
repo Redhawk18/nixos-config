@@ -25,6 +25,7 @@
   };
   nix-ld = true;
   printing = true;
+  tailscale = true;
 
   fileSystems."/mnt/mythra" = {
     device = "mythra.lan:/home/redhawk";

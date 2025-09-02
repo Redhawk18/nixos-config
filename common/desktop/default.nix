@@ -83,5 +83,6 @@
     };
 
     services.flatpak.enable = true;
+
   };
 }

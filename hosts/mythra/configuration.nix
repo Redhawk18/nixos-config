@@ -28,6 +28,7 @@
   };
   nix-ld = true;
   printing = true;
+  tailscale = true;
   xmrig = true;
 
   # Use the systemd-boot EFI boot loader.

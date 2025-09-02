@@ -29,6 +29,7 @@
 
     ../../common/default.nix
   ];
+  tailscale = true;
   xmrig = true;
 
   # Set your time zone.
