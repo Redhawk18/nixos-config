@@ -91,6 +91,18 @@
           modules = [ ./hosts/paisley-park/configuration.nix ];
         };
 
+        PopTart = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            rustowl = import inputs.rustowl { };
+            unstable = import inputs.nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [ ./hosts/poptart/configuration.nix ];
+        };
+
         Shulk = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;

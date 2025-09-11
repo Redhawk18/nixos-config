@@ -10,4 +10,6 @@
     ./system/nix.nix
     ./system/system.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 }
