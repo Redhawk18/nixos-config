@@ -115,6 +115,10 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.syncthing.enable = true;
+  networking.firewall = {
+    allowedTCPPorts = [ 8384 ];
+  };
 
   systemd = {
     targets = {
