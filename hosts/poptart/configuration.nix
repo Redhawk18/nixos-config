@@ -115,7 +115,16 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.syncthing.enable = true;
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    overrideFolders = false;
+
+    user = "redhawk";
+    dataDir = "/home/redhawk";
+    configDir = "/home/redhawk/.config";
+
+  };
   networking.firewall = {
     allowedTCPPorts = [ 8384 ];
   };
