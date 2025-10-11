@@ -13,6 +13,7 @@
       inlyne
       jetbrains.idea-ultimate
       neovim
+      rustdesk-flutter
       vscode
     ];
   };
