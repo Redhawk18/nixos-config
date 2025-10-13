@@ -15,4 +15,7 @@
     wget
   ];
 
+  systemd.extraConfig = ''
+    DefaultLimitNOFILE=8192:524288
+  '';
 }

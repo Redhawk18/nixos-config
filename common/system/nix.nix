@@ -10,6 +10,7 @@
     package = pkgs.nixVersions.latest;
 
     settings = {
+      download-buffer-size = 524288000; # 500MB
       experimental-features = [
         "flakes"
         "nix-command"

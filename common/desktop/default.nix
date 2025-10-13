@@ -44,15 +44,14 @@
 
       audacious
       calibre
-      chromium
       firefox
-      monero-gui
+      # monero-gui
       libreoffice-qt
       liberation_ttf
-      obs-studio
+      # obs-studio
       plexamp
-      puddletag
-      qbittorrent
+      # puddletag
+      # qbittorrent
       vesktop
       slack
       vlc
