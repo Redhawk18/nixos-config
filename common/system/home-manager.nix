@@ -164,6 +164,11 @@
               identityFile = "/home/redhawk/.ssh/keys/pitzer";
             };
 
+            tarsgpu1 = {
+              hostname = "tarsgpu1.tailfa9236.ts.net";
+              user = "redhawk";
+              identityFile = "/home/redhawk/.ssh/keys/tarsgpu1";
+            };
           };
         };
 

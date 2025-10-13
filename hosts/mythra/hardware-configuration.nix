@@ -84,16 +84,24 @@
   };
 
   hardware = {
+    amdgpu.opencl.enable = true;
+    bluetooth.enable = true;
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+    graphics.extraPackages = with pkgs; [
+      rocmPackages.clr.icd
+      rocmPackages.hip-common
+      rocmPackages.rocm-runtime
+      rocmPackages.rocblas
+      rocmPackages.rocrand
+    ];
 
     opengl = {
       enable = true;
       # driSupport = true;
       driSupport32Bit = true;
     };
-    amdgpu.opencl.enable = true;
 
-    bluetooth.enable = true;
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
@@ -101,6 +109,24 @@
   environment.systemPackages = with pkgs; [
     corectrl
     kdePackages.partitionmanager
+
+    clinfo
+    nvtopPackages.amd
+    rocmPackages.rocm-smi
+    rocmPackages.rocminfo
+    rocmPackages.clr
+    rocmPackages.hipcc
+    rocmPackages.hip-common
   ];
+
+  systemd.tmpfiles.rules = [
+    "L+ /opt/rocm - - - - ${pkgs.rocmPackages.rocm-runtime}"
+    "L+ /opt/rocm/hip - - - - ${pkgs.rocmPackages.hip-common}"
+  ];
+
+  environment.variables = {
+    HIP_PATH = "${pkgs.rocmPackages.hip-common}";
+    ROCM_PATH = "${pkgs.rocmPackages.clr}";
+  };
 
 }
