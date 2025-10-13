@@ -168,6 +168,11 @@
               hostname = "tarsgpu1.tailfa9236.ts.net";
               user = "redhawk";
               identityFile = "/home/redhawk/.ssh/keys/tarsgpu1";
+
+            aws = {
+              hostname = "52.1.68.141";
+              user = "ubuntu";
+              identityFile = "/home/redhawk/Desktop/school/CloudComputing/key.pem";
             };
           };
         };
