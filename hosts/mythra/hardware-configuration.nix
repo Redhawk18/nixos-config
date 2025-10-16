@@ -92,8 +92,6 @@
       rocmPackages.clr.icd
       rocmPackages.hip-common
       rocmPackages.rocm-runtime
-      rocmPackages.rocblas
-      rocmPackages.rocrand
     ];
 
     opengl = {
@@ -112,21 +110,14 @@
 
     clinfo
     nvtopPackages.amd
+
     rocmPackages.rocm-smi
     rocmPackages.rocminfo
     rocmPackages.clr
     rocmPackages.hipcc
-    rocmPackages.hip-common
   ];
 
   systemd.tmpfiles.rules = [
     "L+ /opt/rocm - - - - ${pkgs.rocmPackages.rocm-runtime}"
-    "L+ /opt/rocm/hip - - - - ${pkgs.rocmPackages.hip-common}"
   ];
-
-  environment.variables = {
-    HIP_PATH = "${pkgs.rocmPackages.hip-common}";
-    ROCM_PATH = "${pkgs.rocmPackages.clr}";
-  };
-
 }

@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     btop
     busybox
+    devenv
     docker
     docker-compose
     fd
