@@ -34,8 +34,6 @@
       kdePackages.akonadi
       kdePackages.filelight
       kdePackages.kdepim-runtime
-      kdePackages.kmail
-      kdePackages.kmail-account-wizard
       kdePackages.kolourpaint
       kdePackages.korganizer
       kdePackages.okular
@@ -45,13 +43,13 @@
       audacious
       calibre
       firefox
-      # monero-gui
+      monero-gui
       libreoffice-qt
       liberation_ttf
-      # obs-studio
+      obs-studio
       plexamp
-      # puddletag
-      # qbittorrent
+      puddletag
+      qbittorrent
       vesktop
       slack
       vlc

@@ -8,7 +8,7 @@
 
   config = lib.mkIf config.desktop.programming {
     environment.systemPackages = with pkgs; [
-      # blender
+      blender
       dbeaver-bin
       inlyne
       jetbrains.idea-ultimate

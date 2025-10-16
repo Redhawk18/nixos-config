@@ -59,20 +59,15 @@
   # networking.interfaces.wlp7s0.useDHCP = lib.mkDefault true;
 
   nix.settings.system-features = [
-    "nixos-test"
-    "benchmark"
-    "big-parallel"
-    "kvm"
     "gccarch-znver4"
   ];
   nixpkgs.hostPlatform = {
     # The system will take many hours and run out of space to rebuild with native support
-    gcc.arch = "znver4";
-    gcc.tune = "znver4";
+    # gcc.arch = "znver4";
+    # gcc.tune = "znver4";
     system = "x86_64-linux";
   };
 
-  # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.bluetooth.enable = true;
 }
