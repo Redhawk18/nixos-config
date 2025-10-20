@@ -16,8 +16,14 @@
         "nix-command"
       ];
       trusted-users = [ "@wheel" ];
-      substituters = [ "https://devenv.cachix.org" ];
-      trusted-public-keys = [ "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" ];
+      substituters = [
+        "https://devenv.cachix.org"
+        "https://prismlauncher.cachix.org"
+      ];
+      trusted-public-keys = [
+        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+        "prismlauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
+      ];
     };
   };
 }
