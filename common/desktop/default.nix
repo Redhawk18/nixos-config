@@ -55,11 +55,14 @@
       vlc
     ];
 
-    fonts.enableDefaultPackages = true;
-    fonts.packages = with pkgs; [
-      nerd-fonts.symbols-only
-      noto-fonts
-    ];
+    fonts = {
+      enableDefaultPackages = true;
+      fontDir.enable = true;
+      packages = with pkgs; [
+        nerd-fonts.symbols-only
+        noto-fonts
+      ];
+    };
 
     programs = {
       appimage = {
