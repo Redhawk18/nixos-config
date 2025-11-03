@@ -29,7 +29,7 @@
   tailscale = true;
 
   fileSystems."/mnt/mythra" = {
-    device = "mythra.lan:/home/redhawk";
+    device = "mythra.tailfa9236.ts.net:/home/redhawk";
     fsType = "nfs";
     options = [
       "noauto"
