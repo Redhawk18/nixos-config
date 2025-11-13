@@ -181,6 +181,7 @@
         starship.enable = true;
       };
 
+      services.ssh-agent.enable = true;
       services.swayidle = {
         enable = true;
         timeouts = [
