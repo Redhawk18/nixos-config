@@ -19,5 +19,12 @@
       rustdesk-flutter
       vscode
     ];
+
+    # Cross compiling
+    boot.binfmt.emulatedSystems = [
+      "aarch64-linux" # raspberry pi 5
+    ];
+
   };
+
 }
