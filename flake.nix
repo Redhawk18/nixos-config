@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Nixos Community
     home-manager = {
@@ -53,7 +54,10 @@
               config.allowUnfree = true;
             };
           };
-          modules = [ ./hosts/nia/configuration.nix ];
+          modules = [
+            inputs.nixos-hardware.nixosModules.framework-16-7040-amd
+            ./hosts/nia/configuration.nix
+          ];
         };
 
         Malos = nixpkgs.lib.nixosSystem {
