@@ -88,18 +88,15 @@
     bluetooth.enable = true;
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-    graphics.extraPackages = with pkgs; [
-      rocmPackages.clr.icd
-      rocmPackages.hip-common
-      rocmPackages.rocm-runtime
-    ];
-
-    opengl = {
+    graphics = {
       enable = true;
-      # driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        rocmPackages.clr.icd
+        rocmPackages.hip-common
+        rocmPackages.rocm-runtime
+      ];
     };
-
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];

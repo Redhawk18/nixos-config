@@ -12,7 +12,7 @@
       dbeaver-bin
       distrobox
       inlyne
-      jetbrains.idea-ultimate
+      jetbrains.idea
       texliveFull
       texstudio
       neovim
@@ -22,7 +22,7 @@
 
     # Cross compiling
     boot.binfmt.emulatedSystems = [
-      "aarch64-linux" # raspberry pi 5
+      "aarch64-linux"
     ];
 
   };
