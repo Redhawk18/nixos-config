@@ -56,7 +56,7 @@
 
   # CPU Microcode
   environment.systemPackages = with pkgs; [
-    microcodeAmd
+    microcode-amd
     zenstates
   ];
 
