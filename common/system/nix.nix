@@ -18,11 +18,12 @@
       trusted-users = [ "@wheel" ];
       substituters = [
         "https://devenv.cachix.org"
-        "https://prismlauncher.cachix.org"
+        "ssh://poptart.tailfa9236.ts.net:47715/poptart"
+
       ];
       trusted-public-keys = [
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-        "prismlauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
+        "poptart:KLcn0YOyLnJBFCnsgVwpSxCXg34s4oEDt0ky8ItpqRk="
       ];
     };
   };

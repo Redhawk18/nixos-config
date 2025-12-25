@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
 
     ../../common/default.nix
+    ./atticd.nix
   ];
   desktop = {
     enable = true;
@@ -41,7 +42,7 @@
   ];
 
   systemd.settings.Manager = {
-    DefaultLimitNOFILE = "8192:524288";
+    DefaultLimitNOFILE = "65535:1048576";
   };
 
   # Use the systemd-boot EFI boot loader.
