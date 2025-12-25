@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
 
     ../../common/default.nix
+    ./atticd.nix
   ];
   desktop = {
     enable = true;

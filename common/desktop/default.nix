@@ -41,7 +41,7 @@
       kdePackages.yakuake
 
       audacious
-      calibre
+      # calibre
       firefox
       monero-gui
       libreoffice-qt
