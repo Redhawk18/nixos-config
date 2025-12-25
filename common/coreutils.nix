@@ -13,6 +13,7 @@
     home-manager
     neovim
     screen
+    smartmontools
     wget
   ];
 
