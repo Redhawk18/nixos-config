@@ -18,7 +18,7 @@
       trusted-users = [ "@wheel" ];
       substituters = [
         "https://devenv.cachix.org"
-        "ssh://poptart.tailfa9236.ts.net:47715/poptart"
+        "http://poptart.tailfa9236.ts.net:47715/poptart"
 
       ];
       trusted-public-keys = [

@@ -24,6 +24,7 @@
     gaming = true;
     programming = true;
   };
+  march = true;
   nix-ld = true;
   printing = true;
   tailscale = true;

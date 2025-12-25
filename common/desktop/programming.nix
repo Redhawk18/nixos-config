@@ -2,22 +2,23 @@
   config,
   lib,
   pkgs,
+  pure,
   ...
 }:
 {
 
   config = lib.mkIf config.desktop.programming {
-    environment.systemPackages = with pkgs; [
-      blender
-      dbeaver-bin
-      distrobox
-      inlyne
-      jetbrains.idea
-      texliveFull
-      texstudio
-      neovim
-      rustdesk-flutter
-      vscode
+    environment.systemPackages = [
+      # pkgs.# blender
+      pkgs.dbeaver-bin
+      pkgs.distrobox
+      pkgs.inlyne
+      pkgs.jetbrains.idea
+      pkgs.texliveFull
+      pkgs.texstudio
+      pkgs.neovim
+      pkgs.rustdesk-flutter
+      pkgs.vscode
     ];
 
     # Cross compiling

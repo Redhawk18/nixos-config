@@ -1,6 +1,7 @@
 {
   imports = [
     ./coreutils.nix
+    ./march.nix
 
     ./clients/default.nix
     ./desktop/default.nix
@@ -12,4 +13,13 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "-";
+      item = "nofile";
+      value = "65535";
+    }
+  ];
+
 }

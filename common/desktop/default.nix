@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pure,
   unstable,
   ...
 }:
@@ -30,29 +31,27 @@
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [ elisa ];
 
-    environment.systemPackages = with pkgs; [
-      kdePackages.akonadi
-      kdePackages.filelight
-      kdePackages.kdepim-runtime
-      kdePackages.kolourpaint
-      kdePackages.korganizer
-      kdePackages.okular
-      kdePackages.skanpage
-      kdePackages.yakuake
+    environment.systemPackages = [
+      pkgs.kdePackages.akonadi
+      pkgs.kdePackages.filelight
+      pkgs.kdePackages.kdepim-runtime
+      pkgs.kdePackages.kolourpaint
+      pkgs.kdePackages.korganizer
+      pkgs.kdePackages.okular
+      pkgs.kdePackages.skanpage
+      pkgs.kdePackages.yakuake
 
-      audacious
-      # calibre
-      firefox
-      monero-gui
-      libreoffice-qt
-      liberation_ttf
-      obs-studio
-      plexamp
-      puddletag
-      qbittorrent
-      vesktop
-      slack
-      vlc
+      pkgs.audacious
+      pkgs.firefox
+      pkgs.monero-gui
+      # pkgs. # libreoffice
+      # pkgs. # obs-studio
+      pkgs.plexamp
+      pkgs.puddletag
+      pkgs.qbittorrent
+      pkgs.vesktop
+      pkgs.slack
+      pkgs.vlc
     ];
 
     fonts = {

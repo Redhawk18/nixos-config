@@ -15,6 +15,22 @@ let
 in
 {
   config = lib.mkIf config.xmrig {
+    nixpkgs.overlays = [
+      (final: prev: {
+        xmrig-mo = prev.xmrig-mo.overrideAttrs (oldAttrs: {
+          NIX_CFLAGS_COMPILE = (oldAttrs.NIX_CFLAGS_COMPILE or "") + " -march=native -mtune=native";
+
+          #           cmakeFlags = (oldAttrs.cmakeFlags or [ ]) ++ [
+          #             "-DWITH_ADL=OFF" # Optional: disable if not using AMD ADL
+          #             "-DCMAKE_C_FLAGS=-march=native"
+          #             "-DCMAKE_CXX_FLAGS=-march=native"
+          #           ];
+
+          doCheck = false;
+        });
+      })
+    ];
+
     services.xmrig = {
       enable = true;
       package = pkgs.xmrig-mo;
@@ -47,6 +63,7 @@ in
         pause-on-battery = true;
       };
     };
+    boot.kernel.sysctl."vm.nr_hugepages" = 1280;
     environment.systemPackages = [
       xmrig-pause
       xmrig-resume

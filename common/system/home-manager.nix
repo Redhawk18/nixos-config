@@ -2,8 +2,6 @@
 {
   imports = [ inputs.home-manager.nixosModules.default ];
 
-  # nixpkgs.overlays = [ inputs.rustowl.overlays.default ];
-
   home-manager.users.redhawk =
     { lib, pkgs, ... }:
     {
@@ -14,8 +12,9 @@
       };
 
       nixpkgs.overlays = [
-        # inputs.rustowl.overlays.default
-        # inputs.fenix.overlays.default
+        inputs.rustowl.overlays.default
+        inputs.fenix.overlays.default
+        inputs.rust-overlay.overlays.default
       ];
 
       programs = {
@@ -111,8 +110,10 @@
 
             # rust
             rustup
+            cargo
             rust-analyzer
             vscode-extensions.vadimcn.vscode-lldb
+            rustowl
 
           ];
         };

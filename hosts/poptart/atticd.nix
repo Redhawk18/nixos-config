@@ -7,6 +7,10 @@
 
     settings = {
       listen = "[::]:47715";
+      # storage = {
+      #   type = "local";
+      #   path = "/home/attic";
+      # };
 
       jwt = { };
     };
