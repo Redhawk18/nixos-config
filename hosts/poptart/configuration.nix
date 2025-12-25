@@ -23,6 +23,27 @@
   nix-ld = true;
   tailscale = true;
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      # https://github.com/assimp/assimp/issues/6342
+      assimp = prev.assimp.overrideAttrs (oldAttrs: {
+        doCheck = false;
+      });
+      # https://github.com/NixOS/nixpkgs/issues/474185
+      gsl = prev.gsl.overrideAttrs (oldAttrs: {
+        doCheck = false;
+      });
+      # https://github.com/NixOS/nixpkgs/issues/474194
+      folly = prev.folly.overrideAttrs (oldAttrs: {
+        doCheck = false;
+      });
+    })
+  ];
+
+  systemd.settings.Manager = {
+    DefaultLimitNOFILE = "8192:524288";
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
