@@ -86,6 +86,7 @@
             clang
             vscode-extensions.llvm-vs-code-extensions.vscode-clangd
             clang-tools
+            cmake-language-server
 
             # docker
             dockerfile-language-server
@@ -95,6 +96,10 @@
             vscode-langservers-extracted
             nodePackages.typescript-language-server
             nodePackages.svelte-language-server
+            vscode-json-languageserver
+
+            # just
+            just-lsp
 
             # lua
             luajitPackages.lua-lsp
@@ -114,6 +119,9 @@
             rust-analyzer
             vscode-extensions.vadimcn.vscode-lldb
             rustowl
+
+            # yaml
+            yaml-language-server
 
           ];
         };
