@@ -21,7 +21,7 @@
     enable = true;
     programming = true;
   };
-  march = true;
+  # march = true;
   nix-ld = true;
   tailscale = true;
 

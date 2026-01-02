@@ -63,8 +63,8 @@
   ];
   nixpkgs.hostPlatform = {
     # The system will take many hours and run out of space to rebuild with native support
-    gcc.arch = "znver4";
-    gcc.tune = "znver4";
+    # gcc.arch = "znver4";
+    # gcc.tune = "znver4";
     system = "x86_64-linux";
   };
 

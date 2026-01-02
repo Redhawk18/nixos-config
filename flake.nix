@@ -7,17 +7,14 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Nixos Community
-    fenix.url = "github:nix-community/fenix";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    rustowl.url = "github:nix-community/rustowl-flake";
 
     # Community
     nix-minecraft.url = "github:infinidoge/nix-minecraft";
-    rust-overlay.url = "github:oxalica/rust-overlay";
 
     # Dotfiles
     neovim-config = {

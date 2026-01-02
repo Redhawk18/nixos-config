@@ -11,11 +11,7 @@
         stateVersion = "24.05";
       };
 
-      nixpkgs.overlays = [
-        inputs.rustowl.overlays.default
-        inputs.fenix.overlays.default
-        inputs.rust-overlay.overlays.default
-      ];
+      nixpkgs.overlays = [ ];
 
       programs = {
         home-manager.enable = true;
@@ -102,7 +98,7 @@
             just-lsp
 
             # lua
-            luajitPackages.lua-lsp
+            lua-language-server
 
             # nix
             nixd
@@ -118,7 +114,6 @@
             cargo
             rust-analyzer
             vscode-extensions.vadimcn.vscode-lldb
-            rustowl
 
             # yaml
             yaml-language-server

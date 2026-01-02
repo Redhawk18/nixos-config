@@ -87,6 +87,14 @@ in
             doCheck = false;
           });
 
+          openldap = prev.openldap.overrideAttrs (oldAttrs: {
+            doCheck = false;
+          });
+
+          p11-kit = prev.p11-kit.overrideAttrs (oldAttrs: {
+            doCheck = false;
+          });
+
           # ibus = prev.ibus.overrideAttrs (old: {
           #   extraBuildFlags = builtins.filter (
           #     flag: !(prev.lib.hasPrefix "-march=" flag) && !(prev.lib.hasPrefix "-mtune=" flag)

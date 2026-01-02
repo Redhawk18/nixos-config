@@ -71,12 +71,16 @@
   # networking.interfaces.enp14s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp15s0.useDHCP = lib.mkDefault true;
 
+  nix.settings.system-features = [
+    "gccarch-znver4"
+  ];
   nixpkgs = {
-    config.rocmSupport = true;
+    # https://github.com/NixOS/nixpkgs/pull/469378
+    # config.rocmSupport = true;
     localSystem = {
       # The system will take many hours and run out of space to rebuild with native support
-      #      gcc.arch = "znver4";
-      #      gcc.tune = "znver4";
+      # gcc.arch = "znver4";
+      # gcc.tune = "znver4";
       system = "x86_64-linux";
     };
 
@@ -92,9 +96,9 @@
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        rocmPackages.clr.icd
-        rocmPackages.hip-common
-        rocmPackages.rocm-runtime
+        # rocmPackages.clr.icd
+        # rocmPackages.hip-common
+        # rocmPackages.rocm-runtime
       ];
     };
   };
@@ -108,13 +112,13 @@
     clinfo
     nvtopPackages.amd
 
-    rocmPackages.rocm-smi
-    rocmPackages.rocminfo
-    rocmPackages.clr
-    rocmPackages.hipcc
+    # rocmPackages.rocm-smi
+    # rocmPackages.rocminfo
+    # rocmPackages.clr
+    # rocmPackages.hipcc
   ];
 
-  systemd.tmpfiles.rules = [
-    "L+ /opt/rocm - - - - ${pkgs.rocmPackages.rocm-runtime}"
-  ];
+  # systemd.tmpfiles.rules = [
+  #   "L+ /opt/rocm - - - - ${pkgs.rocmPackages.rocm-runtime}"
+  # ];
 }

@@ -29,6 +29,7 @@
 
     ../../common/default.nix
   ];
+  march = true;
   tailscale = true;
   xmrig = true;
 
