@@ -61,6 +61,20 @@
   nix.settings.system-features = [
     "gccarch-znver4"
   ];
+  nixpkgs.config.cudaSupport = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    open = false;
+    nvidiaSettings = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    nvtopPackages.nvidia
+  ];
+
   nixpkgs.hostPlatform = {
     # The system will take many hours and run out of space to rebuild with native support
     # gcc.arch = "znver4";
