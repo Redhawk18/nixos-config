@@ -33,6 +33,7 @@
             ".." = "cd ..";
             gc = "sudo nix-store --gc && sudo nix-collect-garbage -d";
             ll = "ls -lah";
+            rust = "nix shell github:oxalica/rust-overlay#rust-nightly nixpkgs#openssl nixpkgs#pkg-config nixpkgs#gcc";
             switch = "sudo nixos-rebuild switch --flake .#${config.networking.hostName}";
             update = "nix flake update";
           };
