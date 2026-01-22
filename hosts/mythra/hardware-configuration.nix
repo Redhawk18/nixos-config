@@ -75,8 +75,7 @@
     "gccarch-znver4"
   ];
   nixpkgs = {
-    # https://github.com/NixOS/nixpkgs/pull/469378
-    # config.rocmSupport = true;
+    config.rocmSupport = true;
     localSystem = {
       # The system will take many hours and run out of space to rebuild with native support
       # gcc.arch = "znver4";
