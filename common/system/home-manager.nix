@@ -157,16 +157,38 @@
               identityFile = "/home/redhawk/.ssh/keys/paisley-park";
             };
 
+            # Ohio Super Computing
+            pitzer = {
+              hostname = "pitzer.osc.edu";
+              user = "crange";
+              identityFile = "/home/redhawk/.ssh/keys/osc";
+            };
+
+            ascend = {
+              hostname = "ascend.osc.edu";
+              user = "crange";
+              identityFile = "/home/redhawk/.ssh/keys/osc";
+            };
+
+            cardinal = {
+              hostname = "cardinal.osc.edu";
+              user = "crange";
+              identityFile = "/home/redhawk/.ssh/keys/osc";
+            };
+
+            # Wright State
             fry = {
               hostname = "fry.cs.wright.edu";
               user = "w180cxr";
               identityFile = "/home/redhawk/.ssh/keys/fry";
             };
 
-            pitzer = {
-              hostname = "pitzer.osc.edu";
-              user = "crange";
-              identityFile = "/home/redhawk/.ssh/keys/pitzer";
+            # Tars
+            poptart = {
+              hostname = "j192-28-120.cs.wright.edu";
+              user = "redhawk";
+              identityFile = "/home/redhawk/.ssh/keys/poptart";
+
             };
 
             tarsgpu1 = {
@@ -175,11 +197,6 @@
               identityFile = "/home/redhawk/.ssh/keys/tarsgpu1";
             };
 
-            aws = {
-              hostname = "52.1.68.141";
-              user = "ubuntu";
-              identityFile = "/home/redhawk/Desktop/school/CloudComputing/key.pem";
-            };
           };
         };
 

@@ -82,18 +82,27 @@
   #     tree
   #   ];
   # };
-  users.users.redhawk = {
-    isNormalUser = true;
-    extraGroups = [
-      "docker"
-      "networkmanager"
-      "systemd-journal"
-      "wheel"
-    ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBDTW8CdLr/5MG0yUY5R7H0maVJrFQ2Py3lP3ZW1dwop redhawk@Mythra"
-    ];
+  users.users = {
+    guest = {
+      isNormalUser = true;
+      extraGroups = [ ];
+      openssh.authorizedKeys.keys = [ ];
+    };
+    redhawk = {
+      isNormalUser = true;
+      extraGroups = [
+        "docker"
+        "networkmanager"
+        "systemd-journal"
+        "wheel"
+      ]; # Enable ‘sudo’ for the user.
+      packages = with pkgs; [ ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBDTW8CdLr/5MG0yUY5R7H0maVJrFQ2Py3lP3ZW1dwop redhawk@Mythra"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIwqDI1726qPhfDukSJlTbFm8W1SxFngqw5Z7557ya0X redhawk@Nia"
+      ];
+
+    };
   };
 
   # programs.firefox.enable = true;
@@ -116,7 +125,15 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
+
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
