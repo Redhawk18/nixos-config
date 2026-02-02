@@ -94,11 +94,6 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = with pkgs; [
-        # rocmPackages.clr.icd
-        # rocmPackages.hip-common
-        # rocmPackages.rocm-runtime
-      ];
     };
   };
 
@@ -111,13 +106,6 @@
     clinfo
     nvtopPackages.amd
 
-    # rocmPackages.rocm-smi
-    # rocmPackages.rocminfo
-    # rocmPackages.clr
-    # rocmPackages.hipcc
   ];
 
-  # systemd.tmpfiles.rules = [
-  #   "L+ /opt/rocm - - - - ${pkgs.rocmPackages.rocm-runtime}"
-  # ];
 }

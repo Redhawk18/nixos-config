@@ -54,14 +54,32 @@
   nix.settings.system-features = [
     "gccarch-znver4"
   ];
-  nixpkgs.hostPlatform = {
-    # The system will take many hours and run out of space to rebuild with native support
-    # gcc.arch = "znver4";
-    # gcc.tune = "znver4";
-    system = "x86_64-linux";
+  nixpkgs = {
+    config.rocmSupport = true;
+    localSystem = {
+      # The system will take many hours and run out of space to rebuild with native support
+      # gcc.arch = "znver4";
+      # gcc.tune = "znver4";
+      system = "x86_64-linux";
+    };
+
+    system = lib.mkDefault "x86_64-linux";
   };
 
   # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.bluetooth.enable = true;
+  hardware = {
+    amdgpu.opencl.enable = true;
+    bluetooth.enable = true;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+  environment.systemPackages = with pkgs; [
+    nvtopPackages.amd
+  ];
 }
