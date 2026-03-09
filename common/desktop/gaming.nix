@@ -44,8 +44,11 @@ in
       dataDir = "/home/${user}";
       configDir = "/home/${user}/.config";
 
+      settings.devices."Nia".id = "ZHCI2HS-IXEANWO-I2RXULS-FAEFGEA-H6BI73F-TGRTI2D-BE4G7D7-GCXRTQG";
+      settings.devices."Mythra".id = "UEN335T-27HR62N-ULJMQCF-XKQ26ZS-EAK4CCY-STSSXTK-S65PO63-5SIEWAC";
       settings.devices."Paisley-Park".id =
         "HYS7CC6-I4BKAQL-ZIZL23L-LQR5PK6-OJ2HGVW-HQU64QD-UQQLDTQ-JXPZSAG";
+      settings.devices."Pyra".id = "V5KKKJU-ZQP4L2V-YS5DUPY-2YDZAHD-RGNBHFW-IEAQMOD-PFZYVTQ-WCAUAQ6";
     };
 
     networking.firewall = {
