@@ -185,7 +185,7 @@
 
             # Tars
             poptart = {
-              hostname = "j192-28-120.cs.wright.edu";
+              hostname = "poptart.tailfa9236.ts.net";
               user = "redhawk";
               identityFile = "/home/redhawk/.ssh/keys/poptart";
 
