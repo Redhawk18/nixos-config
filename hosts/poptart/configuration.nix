@@ -16,6 +16,7 @@
 
     ../../common/default.nix
     ./atticd.nix
+    ./ollama.nix
   ];
   desktop = {
     enable = true;
