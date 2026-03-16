@@ -37,6 +37,7 @@ in
 
     services.syncthing = {
       enable = true;
+      guiAddress = "0.0.0.0:8384";
       openDefaultPorts = true; # TCP/UDP 22000 UDP 21027
       overrideFolders = false;
 
