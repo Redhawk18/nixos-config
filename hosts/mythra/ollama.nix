@@ -7,17 +7,16 @@
     group = "ollama";
     # home = "/home/ollama";
     # models = "${config.services.ollama.home}/models";
-    loadModels = [
-      "openchat"
-      "codellama"
-    ];
+    loadModels = [ ];
 
-    rocmOverrideGfx = "11.0.0";
+    acceleration = "rocm";
+    # rocmOverrideGfx = "11.0.0";
   };
 
   services.open-webui = {
-    # enable = true;
+    enable = true;
     openFirewall = true;
+    host = "0.0.0.0";
     port = 8082;
     environment = {
       OLLAMA_API_BASE_URL = " http://127.0.0.1:11434 ";

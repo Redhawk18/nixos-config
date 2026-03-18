@@ -104,6 +104,21 @@
       ];
 
     };
+    tars = {
+      isNormalUser = true;
+      extraGroups = [
+        "docker"
+        "networkmanager"
+        "systemd-journal"
+        "wheel"
+      ]; # Enable ‘sudo’ for the user.
+      packages = with pkgs; [
+        chromium
+        slack
+        vscodium
+        unityhub
+      ];
+    };
   };
 
   # programs.firefox.enable = true;
