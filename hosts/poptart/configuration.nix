@@ -143,11 +143,11 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no";
-    };
+    # settings = {
+    #   PasswordAuthentication = false;
+    #   KbdInteractiveAuthentication = false;
+    #   PermitRootLogin = "no";
+    # };
   };
 
   services.syncthing = {
