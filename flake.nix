@@ -107,6 +107,20 @@
           modules = [ ./hosts/poptart/configuration.nix ];
         };
 
+        Toast-Em = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            rustowl = import inputs.rustowl { };
+            unstable = import inputs.nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [ ./hosts/toast-em/configuration.nix ];
+        };
+
+
+
         Shulk = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
