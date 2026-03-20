@@ -1,7 +1,7 @@
 { config, ... }:
 {
   services.ollama = {
-    enable = true;
+    # enable = true;
     openFirewall = true;
     user = "ollama";
     group = "ollama";
@@ -14,7 +14,7 @@
   };
 
   services.open-webui = {
-    enable = true;
+    # enable = true;
     openFirewall = true;
     host = "0.0.0.0";
     port = 8082;
