@@ -22,8 +22,8 @@
     enable = true;
     programming = true;
   };
-  # march = true;
   nix-ld = true;
+  syncthing = true;
   tailscale = true;
 
   # Use the systemd-boot EFI boot loader.
@@ -125,10 +125,10 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -148,20 +148,6 @@
     #   KbdInteractiveAuthentication = false;
     #   PermitRootLogin = "no";
     # };
-  };
-
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-    overrideFolders = false;
-
-    user = "redhawk";
-    dataDir = "/home/redhawk";
-    configDir = "/home/redhawk/.config";
-
-  };
-  networking.firewall = {
-    allowedTCPPorts = [ 8384 ];
   };
 
   systemd = {
