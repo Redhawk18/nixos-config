@@ -10,6 +10,7 @@
 
     ./services/adguardhome.nix
     ./services/calibre.nix
+    ./services/cloudflared.nix
     ./services/flaresolverr.nix
     ./services/forgejo.nix
     ./services/minecraft.nix
@@ -29,7 +30,6 @@
 
     ../../common/default.nix
   ];
-  march = true;
   tailscale = true;
   xmrig = true;
 
