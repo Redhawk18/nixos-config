@@ -22,6 +22,7 @@
     enable = true;
     programming = true;
   };
+  gitera-runner = true;
   nix-ld = true;
   syncthing = true;
   tailscale = true;
