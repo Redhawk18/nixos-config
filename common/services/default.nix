@@ -2,6 +2,7 @@
 {
   imports = [
     ./gitea-runner.nix
+    ./earlyoom.nix
     ./printing.nix
     ./xmrig.nix
   ];
