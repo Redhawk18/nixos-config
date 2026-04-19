@@ -44,7 +44,15 @@
       audacious
       firefox
       monero-gui
-      libreoffice
+
+      (pkgs.libreoffice-qt.override {
+        unwrapped = pkgs.libreoffice-qt.unwrapped.override {
+          kdeIntegration = true;
+        };
+      })
+      hunspell
+      hunspellDicts.en_US
+
       obs-studio
       plexamp
       puddletag
