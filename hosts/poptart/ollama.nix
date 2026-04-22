@@ -1,18 +1,15 @@
-{ config, ... }:
+{ config, unstable, ... }:
 {
   services.ollama = {
     enable = true;
+    package = unstable.ollama-cuda;
+    acceleration = "cuda";
     openFirewall = true;
     user = "ollama";
     group = "ollama";
     # home = "/home/ollama";
     # models = "${config.services.ollama.home}/models";
-    loadModels = [
-      "gemma3"
-      "codellama"
-      "qwen3"
-      "qwen4"
-    ];
+    loadModels = [ ];
 
   };
 

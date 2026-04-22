@@ -119,8 +119,6 @@
           modules = [ ./hosts/toast-em/configuration.nix ];
         };
 
-
-
         Shulk = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
