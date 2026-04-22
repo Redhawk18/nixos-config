@@ -10,6 +10,7 @@
   config = lib.mkIf config.desktop.programming {
     environment.systemPackages = [
       pkgs.blender
+      pkgs.cargo-clean-recursive
       pkgs.dbeaver-bin
       pkgs.distrobox
       pkgs.inlyne
