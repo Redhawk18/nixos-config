@@ -26,6 +26,13 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  zramSwap = {
+    enable = true;
+    algorithm = "lz4";
+    memoryPercent = 50;
+    priority = 100;
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/df0fd678-1bf2-45eb-8208-577632d94582";
     fsType = "btrfs";
