@@ -29,6 +29,9 @@
         "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
         "poptart:KLcn0YOyLnJBFCnsgVwpSxCXg34s4oEDt0ky8ItpqRk="
       ];
+
+      fallback = true;
+      connect-timeout = 5;
     };
   };
 }

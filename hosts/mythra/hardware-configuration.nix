@@ -61,6 +61,13 @@
     options = [ "nofail" ];
   };
 
+  zramSwap = {
+    enable = true;
+    algorithm = "lz4"; # X3D-friendly: smaller cache footprint than zstd
+    memoryPercent = 50; # 50% of 32GB = 16GB zram device
+    priority = 100; # higher than disk swap, so it fills first
+  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
