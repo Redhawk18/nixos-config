@@ -79,7 +79,7 @@
             python3
 
             # bash
-            nodePackages.bash-language-server
+            bash-language-server
             shfmt
 
             # c, c++
@@ -94,8 +94,8 @@
 
             # javascript
             vscode-langservers-extracted
-            nodePackages.typescript-language-server
-            nodePackages.svelte-language-server
+            typescript-language-server
+            svelte-language-server
             vscode-json-languageserver
 
             # just
