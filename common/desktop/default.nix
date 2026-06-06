@@ -9,6 +9,7 @@
 {
   imports = [
     ./gaming.nix
+    ./laptop.nix
     ./programming.nix
   ];
 
@@ -16,6 +17,7 @@
     desktop = {
       enable = lib.mkEnableOption "enables desktop";
       gaming = lib.mkEnableOption "enable desktop gaming";
+      laptop = lib.mkEnableOption "enable desktop laptop";
       programming = lib.mkEnableOption "enable desktop programming";
     };
   };
