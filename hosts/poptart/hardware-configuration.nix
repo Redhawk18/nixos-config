@@ -23,6 +23,7 @@
     "usbhid"
     "sd_mod"
   ];
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
@@ -62,17 +63,34 @@
     "gccarch-znver4"
   ];
   nixpkgs.config.cudaSupport = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [
+    "modesetting" # Intel Arc
+    "nvidia"
+  ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vpl-gpu-rt
+      intel-compute-runtime
+      vulkan-loader
+    ];
+
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-    open = false;
+    open = true; # Ada, Blackwell+ need open source drivers.
     nvidiaSettings = true;
   };
 
   environment.systemPackages = with pkgs; [
-    nvtopPackages.nvidia
+    nvtopPackages.full
+
+    intel-gpu-tools
   ];
 
   nixpkgs.hostPlatform = {
