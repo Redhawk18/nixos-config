@@ -1,16 +1,15 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   services.ollama = {
     # enable = true;
     openFirewall = true;
+    package = pkgs.ollama-rocm;
     user = "ollama";
     group = "ollama";
     # home = "/home/ollama";
     # models = "${config.services.ollama.home}/models";
     loadModels = [ ];
 
-    acceleration = "rocm";
-    # rocmOverrideGfx = "11.0.0";
   };
 
   services.open-webui = {
