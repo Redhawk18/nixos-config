@@ -103,7 +103,6 @@
     htop
     inxi
     megacmd
-    neofetch
     neovim
     nfs-utils
     nvtopPackages.full
