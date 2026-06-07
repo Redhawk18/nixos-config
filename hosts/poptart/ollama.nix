@@ -3,7 +3,6 @@
   services.ollama = {
     enable = true;
     package = unstable.ollama-cuda;
-    acceleration = "cuda";
     openFirewall = true;
     host = "0.0.0.0";
     user = "ollama";
