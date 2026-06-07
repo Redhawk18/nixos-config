@@ -16,7 +16,13 @@
 
     ../../common/default.nix
   ];
-  # xmrig = true;
+  desktop = {
+    enable = true;
+    gaming = true;
+    programming = true;
+  };
+  tailscale = true;
+  xmrig = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -25,11 +31,11 @@
   networking.hostName = "Shulk"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-  networking.wireless.iwd = {
-    enable = true;
-    settings.Settings.AutoConnect = true;
-  };
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  # networking.wireless.iwd = {
+  #   enable = true;
+  #   settings.Settings.AutoConnect = true;
+  # };
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -68,12 +74,16 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.redhawk = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
+  users.users = {
+    redhawk = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+      packages = with pkgs; [ ];
+    };
+    diemy = {
+      isNormalUser = true;
 
-    ];
+    };
   };
 
   # programs.firefox.enable = true;
@@ -97,6 +107,15 @@
   # };
 
   # List services that you want to enable:
+  systemd = {
+    targets = {
+      sleep.enable = false;
+      suspend.enable = false;
+      hibernate.enable = false;
+      hybrid-sleep.enable = false;
+    };
+  };
+
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -105,7 +124,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
