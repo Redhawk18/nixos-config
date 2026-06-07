@@ -39,8 +39,15 @@
     fsType = "vfat";
   };
 
+  zramSwap = {
+    enable = true;
+    algorithm = "lz4";
+    memoryPercent = 50;
+    priority = 100;
+  };
+
   swapDevices = [
-    { device = "/dev/disk/by-uuid/48098bcd-9504-4655-b298-7d7ce56bab4a"; }
+    # { device = "/dev/disk/by-uuid/48098bcd-9504-4655-b298-7d7ce56bab4a"; }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -53,5 +60,18 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   nixpkgs.config.rocmSupport = true;
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  
+  hardware = {
+    amdgpu.opencl.enable = true;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+
 }
