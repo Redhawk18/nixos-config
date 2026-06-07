@@ -20,7 +20,7 @@
   nfs = true;
   desktop = {
     enable = true;
-    gaming = true;
+    # gaming = true;
     programming = true;
   };
   printing = true;
@@ -77,20 +77,30 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.redhawk = {
-    isNormalUser = true;
-    extraGroups = [
-      "docker"
-      "networkmanager"
-      "systemd-journal"
-      "wheel"
-    ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      btop
-      neovim
-      swayidle
-      starship
-    ];
+  users.users = {
+    diemy = {
+      isNormalUser = true;
+      extraGroups = [
+        "networkmanager"
+      ];
+      packages = with pkgs; [ ];
+    };
+
+    redhawk = {
+      isNormalUser = true;
+      extraGroups = [
+        "docker"
+        "networkmanager"
+        "systemd-journal"
+        "wheel"
+      ]; # Enable ‘sudo’ for the user.
+      packages = with pkgs; [
+        btop
+        neovim
+        swayidle
+        starship
+      ];
+    };
   };
 
   # Allow unfree packages
