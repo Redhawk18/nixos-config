@@ -20,7 +20,8 @@
   nfs = true;
   desktop = {
     enable = true;
-    # gaming = true;
+    gaming = true;
+    laptop = true;
     programming = true;
   };
   printing = true;
