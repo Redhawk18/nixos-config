@@ -14,7 +14,10 @@
         enable = true;
         url = "https://git.redhawkcodes.dev";
         tokenFile = "/var/lib/gitea-runner/forgejo.token";
-        labels = [ "debian:docker://node:lts-slim" ];
+        labels = [
+          "debian:docker://node:lts-slim"
+          "rust:docker://shepmaster/rust-stable"
+        ];
       };
     };
   };
