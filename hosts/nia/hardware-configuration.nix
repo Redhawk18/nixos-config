@@ -3,6 +3,7 @@
 # to /etc/nixos/configuration.nix instead.
 {
   config,
+  inputs,
   lib,
   pkgs,
   modulesPath,
@@ -12,6 +13,7 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.nixos-hardware.nixosModules.framework-16-7040-amd
   ];
 
   boot.initrd.availableKernelModules = [
