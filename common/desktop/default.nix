@@ -46,7 +46,6 @@
       audacious
       firefox
       monero-gui
-
       (pkgs.libreoffice-qt.override {
         unwrapped = pkgs.libreoffice-qt.unwrapped.override {
           kdeIntegration = true;
@@ -63,6 +62,9 @@
       discord
       slack
       vlc
+
+      networkmanager-openvpn
+      openvpn
     ];
 
     fonts = {
@@ -93,6 +95,10 @@
     };
 
     services.flatpak.enable = true;
+
+    networking.networkmanager = {
+      plugins = [ pkgs.networkmanager-openvpn ];
+    };
 
   };
 }
