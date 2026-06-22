@@ -138,20 +138,14 @@
             };
 
             mythra = {
-              hostname = "mythra.lan";
+              hostname = "mythra";
               user = "redhawk";
               identityFile = "/home/redhawk/.ssh/keys/mythra";
             };
 
             paisley-park = {
-              hostname = "paisley-park.lan";
+              hostname = "paisley-park";
               user = "redhawk";
-              identityFile = "/home/redhawk/.ssh/keys/paisley-park";
-            };
-
-            forgejo = {
-              hostname = "paisley-park.lan";
-              user = "forgejo";
               identityFile = "/home/redhawk/.ssh/keys/paisley-park";
             };
 
