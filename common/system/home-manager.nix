@@ -47,8 +47,8 @@
 
         git = {
           enable = true;
-          userName = "Redhawk18";
-          userEmail = "redhawk76767676@gmail.com";
+          userName = "Redhawk";
+          userEmail = "redhawk@redhawkcodes.dev";
           extraConfig = {
             credential.helper = "store";
           };
