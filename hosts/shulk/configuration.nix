@@ -21,6 +21,7 @@
     gaming = true;
     programming = true;
   };
+  printing = true;
   tailscale = true;
   xmrig = true;
 
@@ -115,7 +116,6 @@
       hybrid-sleep.enable = false;
     };
   };
-
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
