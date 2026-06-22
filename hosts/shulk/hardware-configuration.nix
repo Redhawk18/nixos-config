@@ -60,9 +60,10 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   nixpkgs.config.rocmSupport = true;
-  
+
   hardware = {
     amdgpu.opencl.enable = true;
+    bluetooth.enable = true;
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
     graphics = {
@@ -72,6 +73,5 @@
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
-
 
 }
