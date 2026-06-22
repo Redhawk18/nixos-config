@@ -47,10 +47,15 @@
 
         git = {
           enable = true;
-          userName = "Redhawk";
-          userEmail = "redhawk@redhawkcodes.dev";
           extraConfig = {
             credential.helper = "store";
+          };
+
+          settings = {
+            user = {
+              name = "Redhawk";
+              email = "redhawk@redhawkcodes.dev";
+            };
           };
         };
 
@@ -101,7 +106,7 @@
 
             # nix
             nixd
-            nixfmt-rfc-style
+            nixfmt
 
             # python
             pyright
@@ -122,7 +127,7 @@
 
         ssh = {
           enable = true;
-          compression = true;
+          settings."*".compression = true;
 
           matchBlocks = {
             "github.com" = {
