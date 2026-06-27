@@ -23,6 +23,7 @@
           container = {
             options = "-v /var/run/docker.sock:/var/run/docker.sock";
             valid_volumes = [ "/var/run/docker.sock" ];
+            force_pull = true;
           };
         };
       };
