@@ -16,8 +16,15 @@
         tokenFile = "/var/lib/gitea-runner/forgejo.token";
         labels = [
           "debian:docker://node:lts-slim"
-          "rust:docker://shepmaster/rust-stable"
+          "rust:docker://redhawk76/rust"
+          "docker:docker://catthehacker/ubuntu:act-latest"
         ];
+        settings = {
+          container = {
+            options = "-v /var/run/docker.sock:/var/run/docker.sock";
+            valid_volumes = [ "/var/run/docker.sock" ];
+          };
+        };
       };
     };
   };
