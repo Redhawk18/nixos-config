@@ -53,7 +53,7 @@
 
           settings = {
             user = {
-              name = "Redhawk";
+              name = "Redhawk18";
               email = "redhawk@redhawkcodes.dev";
             };
           };
