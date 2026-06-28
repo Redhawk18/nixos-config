@@ -2,7 +2,7 @@
 {
   config = lib.mkIf config.nfs {
     fileSystems."/mnt/paisley-park" = {
-      device = "paisley-park.lan:/boundman/server_files";
+      device = "paisley-park:/boundman/server_files";
       fsType = "nfs";
       options = [
         "noauto"
