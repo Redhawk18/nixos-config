@@ -177,11 +177,11 @@
     "neovim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1781842968,
-        "narHash": "sha256-JMPX1k7nPQS0D/H0ylGFPdBBrnRBlDSsmj3n+c6Qf6I=",
+        "lastModified": 1783311982,
+        "narHash": "sha256-SUCjnsHAJZMSP5JnzcoDceE3eZyl7/JBRknCWKTqyng=",
         "owner": "redhawk18",
         "repo": "neovim-config",
-        "rev": "f00e60192f809ce86625067babe30081f742a9ec",
+        "rev": "6b98ac8668bf8d46ba6e1bdabeef450b4ad18d2a",
         "type": "github"
       },
       "original": {
@@ -244,11 +244,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1783224471,
-        "narHash": "sha256-JnLnMg0OciXY3qWOSSVBS5/FCM8XJoqzoO3w60yga8o=",
+        "lastModified": 1783311260,
+        "narHash": "sha256-J4r81G3dwO6t+u0ev//lEY2AlkCZEIuXoZt14dY79iE=",
         "owner": "infinidoge",
         "repo": "nix-minecraft",
-        "rev": "c872e138789e497711f8fbee503a6c15530602e7",
+        "rev": "4f81c33f60f737c54c05a6fd2e959dbec680d1b3",
         "type": "github"
       },
       "original": {
