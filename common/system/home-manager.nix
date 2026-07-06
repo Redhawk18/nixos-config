@@ -118,7 +118,7 @@
             rustup
             cargo
             rust-analyzer
-            vscode-extensions.vadimcn.vscode-lldb
+            pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter
 
             # yaml
             yaml-language-server
@@ -214,8 +214,8 @@
       };
 
       xdg = {
-        # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
-        configFile."nvim".source = inputs.neovim-config;
+        configFile."nvim".source = "/home/redhawk/code/neovim-config/";
+        # configFile."nvim".source = inputs.neovim-config;
       };
     };
 }
