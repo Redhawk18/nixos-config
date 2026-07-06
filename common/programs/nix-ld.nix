@@ -21,10 +21,10 @@
           libxkbcommon
           openal
           SDL2
-          xorg.libX11
+          libx11
         ]
         ++ (
-          if (config.hardware.pulseaudio.enable || config.services.pipewire.pulse.enable) then
+          if (config.services.pulseaudio.enable || config.services.pipewire.pulse.enable) then
             [ pulseaudio ]
           else
             [ alsa-lib ]

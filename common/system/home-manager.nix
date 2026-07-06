@@ -47,11 +47,10 @@
 
         git = {
           enable = true;
-          extraConfig = {
-            credential.helper = "store";
-          };
 
           settings = {
+            credential.helper = "store";
+
             user = {
               name = "Redhawk18";
               email = "redhawk@redhawkcodes.dev";
@@ -66,6 +65,8 @@
         neovim = {
           enable = true;
           defaultEditor = true;
+          withRuby = true;
+          withPython3 = true;
           extraPackages = with pkgs; [
             # programs
             git
@@ -127,73 +128,73 @@
 
         ssh = {
           enable = true;
-          settings."*".compression = true;
+          enableDefaultConfig = false;
 
-          matchBlocks = {
+          settings = {
+            "*".Compression = true;
+
             "github.com" = {
-              hostname = "github.com";
-              user = "git";
-              identityFile = "/home/redhawk/.ssh/keys/github";
+              HostName = "github.com";
+              User = "git";
+              IdentityFile = "/home/redhawk/.ssh/keys/github";
             };
 
             "gitlab.com" = {
-              hostname = "gitlab.com";
-              user = "git";
-              identityFile = "/home/redhawk/.ssh/keys/gitlab";
+              HostName = "gitlab.com";
+              User = "git";
+              IdentityFile = "/home/redhawk/.ssh/keys/gitlab";
             };
 
             mythra = {
-              hostname = "mythra";
-              user = "redhawk";
-              identityFile = "/home/redhawk/.ssh/keys/mythra";
+              HostName = "mythra";
+              User = "redhawk";
+              IdentityFile = "/home/redhawk/.ssh/keys/mythra";
             };
 
             paisley-park = {
-              hostname = "paisley-park";
-              user = "redhawk";
-              identityFile = "/home/redhawk/.ssh/keys/paisley-park";
+              HostName = "paisley-park";
+              User = "redhawk";
+              IdentityFile = "/home/redhawk/.ssh/keys/paisley-park";
             };
 
             # Ohio Super Computing
             pitzer = {
-              hostname = "pitzer.osc.edu";
-              user = "crange";
-              identityFile = "/home/redhawk/.ssh/keys/osc";
+              HostName = "pitzer.osc.edu";
+              User = "crange";
+              IdentityFile = "/home/redhawk/.ssh/keys/osc";
             };
 
             ascend = {
-              hostname = "ascend.osc.edu";
-              user = "crange";
-              identityFile = "/home/redhawk/.ssh/keys/osc";
+              HostName = "ascend.osc.edu";
+              User = "crange";
+              IdentityFile = "/home/redhawk/.ssh/keys/osc";
             };
 
             cardinal = {
-              hostname = "cardinal.osc.edu";
-              user = "crange";
-              identityFile = "/home/redhawk/.ssh/keys/osc";
+              HostName = "cardinal.osc.edu";
+              User = "crange";
+              IdentityFile = "/home/redhawk/.ssh/keys/osc";
             };
 
             # Wright State
             fry = {
-              hostname = "fry.cs.wright.edu";
-              user = "w180cxr";
-              identityFile = "/home/redhawk/.ssh/keys/fry";
+              HostName = "fry.cs.wright.edu";
+              User = "w180cxr";
+              IdentityFile = "/home/redhawk/.ssh/keys/fry";
             };
 
             # Tars
             poptart = {
-              hostname = "poptart.tailfa9236.ts.net";
-              user = "redhawk";
-              identityFile = "/home/redhawk/.ssh/keys/poptart";
-
+              HostName = "poptart.tailfa9236.ts.net";
+              User = "redhawk";
+              IdentityFile = "/home/redhawk/.ssh/keys/poptart";
             };
 
             tarsgpu1 = {
-              hostname = "tarsgpu1.tailfa9236.ts.net";
-              user = "redhawk";
-              identityFile = "/home/redhawk/.ssh/keys/tarsgpu1";
+              HostName = "tarsgpu1.tailfa9236.ts.net";
+              User = "redhawk";
+              IdentityFile = "/home/redhawk/.ssh/keys/tarsgpu1";
             };
-
           };
         };
 

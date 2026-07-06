@@ -30,7 +30,7 @@
       unstable.prismlauncher
       unstable.ryubing
 
-      inputs.better-trove-tools.packages.${pkgs.system}.default
+      inputs.better-trove-tools.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     syncthing = lib.mkDefault true;
