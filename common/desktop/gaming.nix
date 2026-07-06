@@ -1,7 +1,7 @@
 {
   config,
+  inputs,
   lib,
-  nixpkgs,
   pkgs,
   unstable,
   ...
@@ -30,6 +30,7 @@
       unstable.prismlauncher
       unstable.ryubing
 
+      inputs.better-trove-tools.packages.${pkgs.system}.default
     ];
 
     syncthing = lib.mkDefault true;

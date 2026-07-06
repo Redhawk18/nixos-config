@@ -10,6 +10,8 @@
     environment.systemPackages = [
       pkgs.blender
       pkgs.cargo-clean-recursive
+      pkgs.claude-code
+      pkgs.claude-monitor
       pkgs.dbeaver-bin
       pkgs.distrobox
       pkgs.inlyne

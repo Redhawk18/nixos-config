@@ -68,7 +68,7 @@
     priority = 100; # higher than disk swap, so it fills first
   };
 
-  swapDevices = [ ];
+  swapDevices = [ { device = "/dev/disk/by-uuid/a91e887b-ed15-41b2-ba8f-26ccb49a1745"; } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

@@ -14,6 +14,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     # Community
+    better-trove-tools.url = "github:redhawk18/better-trove-tools-flake";
     nix-minecraft.url = "github:infinidoge/nix-minecraft";
 
     # Dotfiles
