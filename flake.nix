@@ -18,6 +18,10 @@
     nix-minecraft.url = "github:infinidoge/nix-minecraft";
 
     # Dotfiles
+    blog = {
+      url = "git+https://git.redhawkcodes.dev/Redhawk18/blog.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     neovim-config = {
       url = "github:redhawk18/neovim-config";
       flake = false;
