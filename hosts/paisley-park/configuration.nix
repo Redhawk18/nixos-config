@@ -55,8 +55,8 @@
   services.xserver = {
     # Enable the X11 windowing system.
     enable = false;
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
 
     # Enable the KDE Plasma Desktop Environment.
     # displayManager.sddm.enable = true;
@@ -66,7 +66,7 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

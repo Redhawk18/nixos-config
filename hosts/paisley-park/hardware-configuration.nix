@@ -53,15 +53,11 @@
   nix.settings.system-features = [
     "gccarch-znver2"
   ];
-  nixpkgs.hostPlatform = {
-    # The system will take many hours and run out of space to rebuild with native support
-    # gcc.arch = "znver2";
-    # gcc.tune = "znver2";
-    system = "x86_64-linux";
-  };
+  # The system will take many hours and run out of space to rebuild with native support
+  # To enable: nixpkgs.hostPlatform = { system = "x86_64-linux"; gcc.arch = "znver2"; gcc.tune = "znver2"; };
+  nixpkgs.hostPlatform = "x86_64-linux";
 
   nixpkgs.config.cudaSupport = true;
-  # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = true;
 
   # CPU Microcode
@@ -72,9 +68,9 @@
 
   # Graphics
   # Make sure opengl is enabled
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Tell Xorg to use the nvidia driver

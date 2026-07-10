@@ -44,7 +44,7 @@
           specialArgs = {
             inherit inputs;
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };
@@ -55,7 +55,7 @@
           specialArgs = {
             inherit inputs;
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };
@@ -69,7 +69,7 @@
           specialArgs = {
             inherit inputs;
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };
@@ -81,7 +81,7 @@
             inherit inputs;
             rustowl = import inputs.rustowl { };
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };
@@ -93,7 +93,7 @@
             inherit inputs;
             nur-xddxdd = import inputs.nur-xddxdd { };
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };
@@ -105,7 +105,7 @@
             inherit inputs;
             rustowl = import inputs.rustowl { };
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };
@@ -117,7 +117,7 @@
             inherit inputs;
             rustowl = import inputs.rustowl { };
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };
@@ -128,7 +128,7 @@
           specialArgs = {
             inherit inputs;
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };
@@ -139,7 +139,7 @@
           specialArgs = {
             inherit inputs nixos-wsl;
             unstable = import inputs.nixpkgs-unstable {
-              system = "x86_64-linux";
+              localSystem = "x86_64-linux";
               config.allowUnfree = true;
             };
           };

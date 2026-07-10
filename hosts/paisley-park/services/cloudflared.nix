@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 let
-  blog = inputs.blog.packages.${pkgs.system}.default;
+  blog = inputs.blog.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
   services.nginx = {
