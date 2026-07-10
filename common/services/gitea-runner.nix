@@ -20,6 +20,11 @@
           "docker:docker://catthehacker/ubuntu:act-latest"
         ];
         settings = {
+          cache = {
+            enabled = true;
+            host = "172.17.0.1"; # docker0 gateway — reachable from job containers
+            port = 34567; # pinned so it's stable + firewall-able
+          };
           container = {
             options = "-v /var/run/docker.sock:/var/run/docker.sock";
             valid_volumes = [ "/var/run/docker.sock" ];
@@ -28,5 +33,6 @@
         };
       };
     };
+    networking.firewall.trustedInterfaces = [ "docker0" ];
   };
 }
