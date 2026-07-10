@@ -5,16 +5,16 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1783305854,
-        "narHash": "sha256-Hi5PckPP/4DkQqmt4tqkXuov/N/fl5ipMkTk2WepI2I=",
-        "owner": "redhawk18",
-        "repo": "better-trove-tools-flake",
-        "rev": "3bfe68b52312664ace04d38826b934616af2996e",
+        "lastModified": 1783363822,
+        "narHash": "sha256-NLY52B9CXrDLmvbPBS8BjIqOvVuvrcnOXM8l0pT8QDI=",
+        "owner": "AallynReed",
+        "repo": "BetterTroveTools",
+        "rev": "524ba7038845e1ef15da9d158911232f35d77feb",
         "type": "github"
       },
       "original": {
-        "owner": "redhawk18",
-        "repo": "better-trove-tools-flake",
+        "owner": "AallynReed",
+        "repo": "BetterTroveTools",
         "type": "github"
       }
     },

@@ -35,6 +35,7 @@
 
     environment.systemPackages = with pkgs; [
       kdePackages.akonadi
+      kdePackages.akregator
       kdePackages.filelight
       kdePackages.kdepim-runtime
       kdePackages.kolourpaint
