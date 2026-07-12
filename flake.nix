@@ -15,6 +15,8 @@
 
     # Community
     better-trove-tools.url = "github:AallynReed/BetterTroveTools";
+    led-matrix-daemon.url = "github:night-crawler/led_matrix_daemon";
+    led-matrix-monitoring.url = "github:night-crawler/led_matrix_monitoring";
     nix-minecraft.url = "github:infinidoge/nix-minecraft";
 
     # Dotfiles

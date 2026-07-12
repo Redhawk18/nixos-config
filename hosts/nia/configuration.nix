@@ -13,6 +13,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./led.nix
     ./syncthing.nix
 
     ../../common/default.nix
