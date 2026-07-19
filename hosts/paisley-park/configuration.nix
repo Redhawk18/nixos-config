@@ -30,6 +30,7 @@
 
     ../../common/default.nix
   ];
+  ai = true;
   tailscale = true;
   xmrig = true;
 
