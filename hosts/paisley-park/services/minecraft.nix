@@ -25,7 +25,7 @@
           level-name = "1.21-World";
           level-seed = 7025192174381717753;
           motd = "A thankful server";
-          server-ip = "paisley-park.lan";
+          server-ip = "paisley-park";
           server-port = 25565;
           simulation-distance = 18;
           spawn-protection = 0;
@@ -46,7 +46,7 @@
           level-name = "bigChadGuys2";
           motd = "A Strawberryrkc Summer";
           pvp = false;
-          server-ip = "paisley-park.lan";
+          server-ip = "paisley-park";
           server-port = 25566;
           simulation-distance = 14;
           spawn-protection = 0;
@@ -65,6 +65,26 @@
           {
             "mods" = "${modpack}/mods";
           };
+      };
+
+      coop = {
+        enable = true;
+        package = pkgs.minecraftServers.vanilla-26_2;
+        jvmOpts = "-Xms1G -Xmx8G";
+
+        serverProperties = {
+          difficulty = "hard";
+          enforce-whitelist = true;
+          level-name = "coop";
+          level-seed = -8673088829358497132;
+          motd = "Our Co op <3";
+          server-ip = "paisley-park";
+          server-port = 25567;
+          simulation-distance = 18;
+          spawn-protection = 0;
+          view-distance = 16;
+          white-list = true;
+        };
       };
 
     };
