@@ -78,7 +78,6 @@
           level-name = "coop";
           level-seed = -8673088829358497132;
           motd = "Our Co op <3";
-          server-ip = "paisley-park";
           server-port = 25567;
           simulation-distance = 18;
           spawn-protection = 0;
