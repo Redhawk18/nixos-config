@@ -16,9 +16,7 @@
     inputs.nixos-hardware.nixosModules.framework-16-7040-amd
   ];
 
-  # 0x8 = disable PSR1, 0x10 = disable PSR2, 0x400 = disable Panel Replay
-  # nixos-hardware's framework-16 module already sets dcdebugmask=0x10; it lands
-  # last on the cmdline and wins, so use mkAfter to make our fuller mask win instead.
+  # https://github.com/NixOS/nixos-hardware/pull/1692
   boot.kernelParams = lib.mkAfter [ "amdgpu.dcdebugmask=0x418" ];
 
   # Disable KWin VRR — FW16 eDP tears when frame rate drops below panel minimum
