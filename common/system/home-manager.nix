@@ -2,6 +2,25 @@
 {
   imports = [ inputs.home-manager.nixosModules.default ];
 
+  # Applied to every home-manager user
+  home-manager.sharedModules = [
+    (
+      { lib, pkgs, ... }:
+      {
+        services.swayidle = {
+          enable = true;
+          timeouts = [
+            {
+              timeout = 300;
+              command = ''${lib.getExe pkgs.curl} -s --json '{"method": "resume", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc'';
+              resumeCommand = ''${lib.getExe pkgs.curl} -s --json '{"method": "pause", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc'';
+            }
+          ];
+        };
+      }
+    )
+  ];
+
   home-manager.users.redhawk =
     { lib, pkgs, ... }:
     {
@@ -201,16 +220,6 @@
       };
 
       services.ssh-agent.enable = true;
-      services.swayidle = {
-        enable = true;
-        timeouts = [
-          {
-            timeout = 300;
-            command = ''${lib.getExe pkgs.curl} -s --json '{"method": "resume", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc'';
-            resumeCommand = ''${lib.getExe pkgs.curl} -s --json '{"method": "pause", "id": 1}' -H 'Authorization: Bearer password' http://localhost:6969/json_rpc'';
-          }
-        ];
-      };
 
       xdg = {
         # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
