@@ -69,7 +69,7 @@
 
       coop = {
         enable = true;
-        package = pkgs.minecraftServers.vanilla-26_2;
+        package = pkgs.fabricServers.fabric-26_2.override { jre_headless = pkgs.jdk25; };
         jvmOpts = "-Xms1G -Xmx8G";
 
         serverProperties = {
@@ -83,6 +83,17 @@
           spawn-protection = 0;
           view-distance = 16;
           white-list = true;
+        };
+
+        symlinks = {
+          "mods/voicechat-fabric-2.6.21+26.2.jar" = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/3SOh5iiX/voicechat-fabric-2.6.21%2B26.2.jar";
+            hash = "sha256-7V+hoRf6Jr+8hGPCf4io3/xT2id3gfJm7RESKB9/Zfc=";
+          };
+          "mods/DistantHorizons-3.2.0-b-26.2-fabric-neoforge.jar" = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/uCdwusMi/versions/gBf0SaV1/DistantHorizons-3.2.0-b-26.2-fabric-neoforge.jar";
+            hash = "sha256-+3pg+gZ3XSCP9HzkuYxmjNxSdEnDfaSoBoaVeURWNJ8=";
+          };
         };
       };
 
