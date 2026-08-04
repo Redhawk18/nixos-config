@@ -91,7 +91,6 @@
     htop
     inxi
     iwd
-    neofetch
     nfs-utils
     nixfmt
     openssh
