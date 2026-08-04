@@ -11,6 +11,7 @@
     ./services/adguardhome.nix
     ./services/calibre.nix
     ./services/cloudflared.nix
+    ./services/cross-seed.nix
     ./services/flaresolverr.nix
     ./services/forgejo.nix
     ./services/minecraft.nix
