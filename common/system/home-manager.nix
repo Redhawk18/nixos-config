@@ -202,12 +202,6 @@
             };
 
             # Tars
-            poptart = {
-              HostName = "poptart.tailfa9236.ts.net";
-              User = "redhawk";
-              IdentityFile = "/home/redhawk/.ssh/keys/poptart";
-            };
-
             tarsgpu1 = {
               HostName = "tarsgpu1.tailfa9236.ts.net";
               User = "redhawk";
