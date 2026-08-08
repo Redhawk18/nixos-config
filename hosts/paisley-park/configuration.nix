@@ -14,6 +14,7 @@
     ./services/cross-seed.nix
     ./services/flaresolverr.nix
     ./services/forgejo.nix
+    ./services/lidarr.nix
     ./services/minecraft.nix
     ./services/nfs.nix
     ./services/plex.nix
