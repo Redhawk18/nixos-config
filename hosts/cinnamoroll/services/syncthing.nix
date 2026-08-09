@@ -10,41 +10,6 @@
     };
 
     folders = {
-      "documents" = {
-        path = "~/documents";
-        devices = [
-          "laptop"
-          "phone"
-        ];
-        versioning = {
-          type = "simple";
-          params = {
-            keep = "3";
-            cleanoutDays = "14";
-          };
-        };
-
-      };
-    };
-
-    folders = {
-      "important" = {
-        devices = [
-          "laptop"
-          "phone"
-        ];
-        versioning = {
-          type = "simple";
-          params = {
-            keep = "5";
-            cleanoutDays = "90";
-          };
-        };
-
-      };
-    };
-
-    folders = {
       "pictures" = {
         path = "~/pictures";
         devices = [
