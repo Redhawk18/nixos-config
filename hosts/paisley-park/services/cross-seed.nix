@@ -1,8 +1,9 @@
 { ... }: {
   services.cross-seed = {
     enable = true;
-    user = "root";
-    group = "root";
+    # Runs as `cross-seed` in the shared `media` group so it can read the
+    # qbittorrent data dir and hardlink into linkDirs. See media-storage.nix.
+    group = "media";
     settings = {
       action = "inject";
       dataDirs = [ "/boundman/qbittorrent" ];
@@ -23,4 +24,7 @@
       ];
     };
   };
+
+  # group-writable hardlinks so seeding stays accessible to the arrs.
+  systemd.services.cross-seed.serviceConfig.UMask = "0002";
 }

@@ -19,13 +19,14 @@
     ./services/nfs.nix
     ./services/plex.nix
     ./services/prowlarr.nix
-    ./services/qbittorrent-nox.nix
+    ./services/qbittorrent.nix
     ./services/radarr.nix
     ./services/samba.nix
     ./services/sonarr.nix
     ./services/syncthing.nix
 
     ./system/boot.nix
+    ./system/media-storage.nix
     ./system/networking.nix
     ./system/users.nix
     ./system/zfs.nix

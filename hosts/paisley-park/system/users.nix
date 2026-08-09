@@ -1,7 +1,17 @@
 { pkgs, ... }: {
   users = {
-    groups = { minecraft = { }; };
+    groups = {
+      minecraft = { };
+      # Shared group for all media services (sonarr/radarr/lidarr/qbittorrent/
+      # cross-seed) so they can read+write each other's files for hardlinking
+      # and atomic moves. Fixed gid keeps ownership stable across NFS/Samba.
+      media = { gid = 987; };
+    };
     users = {
+
+      # Give Plex read access to the shared media library.
+      plex.extraGroups = [ "media" ];
+
 
       redhawk = {
         isNormalUser = true;
