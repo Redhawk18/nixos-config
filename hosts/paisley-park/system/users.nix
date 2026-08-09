@@ -9,10 +9,6 @@
     };
     users = {
 
-      # Give Plex read access to the shared media library.
-      plex.extraGroups = [ "media" ];
-
-
       redhawk = {
         isNormalUser = true;
         description = "Redhawk";

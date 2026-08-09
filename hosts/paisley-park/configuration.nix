@@ -24,6 +24,7 @@
     ./services/samba.nix
     ./services/sonarr.nix
     ./services/syncthing.nix
+    ./services/torrent-cleaner.nix
 
     ./system/boot.nix
     ./system/media-storage.nix
