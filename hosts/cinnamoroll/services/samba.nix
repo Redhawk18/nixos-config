@@ -7,7 +7,7 @@
         server_files = {
           browseable = "yes";
           comment = "Server Files";
-          path = "/share";
+          path = "/mnt/media";
           "read only" = "no";
         };
       };

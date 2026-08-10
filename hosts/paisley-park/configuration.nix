@@ -11,23 +11,13 @@
     ./services/adguardhome.nix
     ./services/calibre.nix
     ./services/cloudflared.nix
-    ./services/cross-seed.nix
-    ./services/flaresolverr.nix
     ./services/forgejo.nix
-    ./services/lidarr.nix
     ./services/minecraft.nix
     ./services/nfs.nix
-    ./services/plex.nix
-    ./services/prowlarr.nix
-    ./services/qbittorrent.nix
-    ./services/radarr.nix
     ./services/samba.nix
-    ./services/sonarr.nix
     ./services/syncthing.nix
-    ./services/torrent-cleaner.nix
 
     ./system/boot.nix
-    ./system/media-storage.nix
     ./system/networking.nix
     ./system/users.nix
     ./system/zfs.nix
@@ -37,6 +27,16 @@
   ai = true;
   tailscale = true;
   xmrig = true;
+
+  services.media-hosting = {
+    enable = true;
+    storageBase = "/boundman";
+  };
+
+  services.cross-seed.settings.torznab = [
+    "http://localhost:9696/1/api?apikey=20a94ff4aba24e37b41a30e4f073e04c" # TorrentLeech
+    "http://localhost:9696/4/api?apikey=20a94ff4aba24e37b41a30e4f073e04c" # AnimeBytes
+  ];
 
   # Set your time zone.
   time.timeZone = "America/New_York";

@@ -3,6 +3,7 @@
   imports = [
     ./gitea-runner.nix
     ./earlyoom.nix
+    ./media-hosting.nix
     ./printing.nix
     ./xmrig.nix
   ];

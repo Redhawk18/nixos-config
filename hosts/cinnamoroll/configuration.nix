@@ -12,20 +12,25 @@
     ./system/users.nix
 
     ./services/adguardhome.nix
-    ./services/flaresolverr.nix
     ./services/nfs.nix
-    ./services/plex.nix
-    ./services/prowlarr.nix
-    ./services/qbittorrent-nox.nix
-    ./services/radarr.nix
     ./services/samba.nix
-    ./services/sonarr.nix
     ./services/syncthing.nix
 
     ../../common/default.nix
   ];
 
   ai = true;
+
+  services.media-hosting = {
+    enable = true;
+    storageBase = "/mnt/media";
+    libraryDir = "/mnt/media";
+  };
+
+  # Fill in the indexer ID and API key from Prowlarr after first deploy.
+  services.cross-seed.settings.torznab = [
+    "http://localhost:9696/1/api?apikey=REPLACE_WITH_PROWLARR_KEY" # TorrentLeech
+  ];
 
   # Set your time zone.
   time.timeZone = "America/New_York";

@@ -3,7 +3,7 @@
     server = {
       enable = true;
       exports = ''
-        /share *(rw,sync)
+        /mnt/media *(rw,sync)
       '';
     };
   };
