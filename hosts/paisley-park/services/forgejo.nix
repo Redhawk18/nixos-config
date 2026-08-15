@@ -16,6 +16,10 @@
           ROOT_URL = "https://git.redhawkcodes.dev/";
           REQUIRE_SIGNIN_VIEW = true;
         };
+        service = {
+          ENABLE_CAPTCHA = true;
+          CAPTCHA_TYPE = "image";
+        };
         "service.explore" = {
           DISABLE_USERS_PAGE = true;
         };
