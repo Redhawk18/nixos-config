@@ -46,6 +46,7 @@
 
       audacious
       firefox
+      halloy
       monero-gui
       (pkgs.libreoffice-qt.override {
         unwrapped = pkgs.libreoffice-qt.unwrapped.override {
@@ -61,7 +62,6 @@
       qbittorrent
       vesktop
       discord
-      slack
       vlc
 
       networkmanager-openvpn
