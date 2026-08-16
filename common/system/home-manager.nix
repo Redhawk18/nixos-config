@@ -21,6 +21,18 @@
     )
   ];
 
+  home-manager.users.diemy =
+    { ... }:
+    {
+      home = {
+        username = "diemy";
+        homeDirectory = "/home/diemy";
+        stateVersion = "24.05";
+      };
+
+      programs.home-manager.enable = true;
+    };
+
   home-manager.users.redhawk =
     { lib, pkgs, ... }:
     {
