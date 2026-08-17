@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, inputs, lib, ... }:
 {
   imports = [ inputs.home-manager.nixosModules.default ];
 
@@ -21,7 +21,7 @@
     )
   ];
 
-  home-manager.users.diemy =
+  home-manager.users.diemy = lib.mkIf (config.users.users ? diemy) (
     { ... }:
     {
       home = {
@@ -31,7 +31,8 @@
       };
 
       programs.home-manager.enable = true;
-    };
+    }
+  );
 
   home-manager.users.redhawk =
     { lib, pkgs, ... }:
