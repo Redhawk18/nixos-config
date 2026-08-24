@@ -13,11 +13,10 @@
       pkgs.dbeaver-bin
       pkgs.distrobox
       pkgs.inlyne
-      # pkgs.jetbrains.idea
+      pkgs.jetbrains.idea
       pkgs.texliveFull
       pkgs.texstudio
       pkgs.neovim
-      # pkgs.rustdesk-flutter
       pkgs.vscode
     ];
 
