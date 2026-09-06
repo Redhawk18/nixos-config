@@ -4,12 +4,12 @@
     guiAddress = "0.0.0.0:8384";
     openDefaultPorts = true;
 
-    devices = {
+    settings.devices = {
       "laptop".id = "AJIOG4H-TX5MIHI-QGZ7PQQ-XDJMO6C-VIB4PXH-UOOZK57-CMMACYG-4TXH3AI";
       "phone".id = "QOLXN55-6RAIXGK-KTVILCP-CGSBOJX-MHY4QUM-YJKNXSU-CWG7GQ3-AYRFPAM";
     };
 
-    folders = {
+    settings.folders = {
       "pictures" = {
         path = "~/pictures";
         devices = [
