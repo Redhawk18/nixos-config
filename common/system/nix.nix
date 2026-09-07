@@ -34,4 +34,20 @@
     };
   };
 
+  # Expires stale GC roots (direnv shells, stray `result` links) so nix-gc can
+  # actually collect them. Runs Before=nix-gc.service via enableNixGcIntegration,
+  # which defaults to nix.gc.automatic.
+  services.angrr = {
+    enable = true;
+    settings.temporary-root-policies = {
+      direnv = {
+        path-regex = "/\\.direnv/";
+        period = "14d";
+      };
+      result = {
+        path-regex = "/result[^/]*$";
+        period = "7d";
+      };
+    };
+  };
 }

@@ -98,11 +98,17 @@
     services.flatpak.enable = true;
 
     networking.networkmanager = {
+      dns = "systemd-resolved";
       plugins = with pkgs; [
         networkmanager-openconnect
         networkmanager-openvpn
       ];
     };
+
+    # Use systemd-resolved so DNS can be split per-interface/per-domain.
+    # This lets VPNs (e.g. openconnect) register a domain -> internal DNS
+    # only while connected, while Tailscale keeps MagicDNS on tailscale0.
+    services.resolved.enable = true;
 
   };
 }
