@@ -98,7 +98,10 @@
     services.flatpak.enable = true;
 
     networking.networkmanager = {
-      plugins = [ pkgs.networkmanager-openvpn ];
+      plugins = with pkgs; [
+        networkmanager-openconnect
+        networkmanager-openvpn
+      ];
     };
 
   };
