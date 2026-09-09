@@ -11,6 +11,7 @@
     ./gaming.nix
     ./laptop.nix
     ./programming.nix
+    ./school.nix
   ];
 
   options = {
@@ -19,6 +20,7 @@
       gaming = lib.mkEnableOption "enable desktop gaming";
       laptop = lib.mkEnableOption "enable desktop laptop";
       programming = lib.mkEnableOption "enable desktop programming";
+      school = lib.mkEnableOption "enable desktop school";
     };
   };
 

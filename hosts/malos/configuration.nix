@@ -23,6 +23,7 @@
     gaming = true;
     laptop = true;
     programming = true;
+    school = true;
   };
   printing = true;
 

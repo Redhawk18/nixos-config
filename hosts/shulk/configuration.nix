@@ -20,6 +20,7 @@
     enable = true;
     gaming = true;
     programming = true;
+    school = true;
   };
   printing = true;
   tailscale = true;
