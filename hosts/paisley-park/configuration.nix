@@ -14,6 +14,7 @@
     ./services/forgejo.nix
     ./services/minecraft.nix
     ./services/nfs.nix
+    ./services/romm.nix
     ./services/samba.nix
     ./services/syncthing.nix
 
