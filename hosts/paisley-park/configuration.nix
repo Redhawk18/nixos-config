@@ -38,6 +38,7 @@
     "http://localhost:9696/1/api?apikey=20a94ff4aba24e37b41a30e4f073e04c" # TorrentLeech
     "http://localhost:9696/4/api?apikey=20a94ff4aba24e37b41a30e4f073e04c" # AnimeBytes
     "http://localhost:9696/5/api?apikey=20a94ff4aba24e37b41a30e4f073e04c" # Orpheus
+    "http://localhost:9696/6/api?apikey=20a94ff4aba24e37b41a30e4f073e04c" # PrivateHD
   ];
 
   # Set your time zone.
