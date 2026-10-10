@@ -1,4 +1,32 @@
-{ config, inputs, lib, ... }:
+{
+  config,
+  inputs,
+  lib,
+  ...
+}:
+let
+  skillsSrc = "${inputs.skills}/skills";
+
+  skillNames = builtins.attrNames (
+    lib.filterAttrs (_name: type: type == "directory") (builtins.readDir skillsSrc)
+  );
+
+  # Paths are relative to the target root, so this works for both home.file
+  # (relative to $HOME) and xdg.configFile (relative to $XDG_CONFIG_HOME).
+  mkSkillLinks =
+    dirs:
+    lib.listToAttrs (
+      lib.concatMap (
+        dir: map (name: lib.nameValuePair "${dir}/${name}" { source = "${skillsSrc}/${name}"; }) skillNames
+      ) dirs
+    );
+
+  homeSkillDirs = [
+    ".agents/skills"
+    ".claude/skills"
+    ".gemini/skills"
+  ];
+in
 {
   imports = [ inputs.home-manager.nixosModules.default ];
 
@@ -41,6 +69,9 @@
         username = "redhawk";
         homeDirectory = "/home/redhawk";
         stateVersion = "24.05";
+
+        # Agent skills, linked into every agent user-level skills directory.
+        file = mkSkillLinks homeSkillDirs;
       };
 
       nixpkgs.overlays = [ ];
@@ -214,12 +245,6 @@
               IdentityFile = "/home/redhawk/.ssh/keys/fry";
             };
 
-            # Tars
-            tarsgpu1 = {
-              HostName = "tarsgpu1.tailfa9236.ts.net";
-              User = "redhawk";
-              IdentityFile = "/home/redhawk/.ssh/keys/tarsgpu1";
-            };
           };
         };
 
@@ -230,7 +255,11 @@
 
       xdg = {
         # configFile."nvim".source = "/home/redhawk/code/neovim-config/";
-        configFile."nvim".source = inputs.neovim-config;
+        configFile = {
+          "nvim".source = inputs.neovim-config;
+        }
+        # opencode reads skills from $XDG_CONFIG_HOME/opencode/skills.
+        // mkSkillLinks [ "opencode/skills" ];
       };
     };
 }

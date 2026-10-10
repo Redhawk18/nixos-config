@@ -1570,7 +1570,8 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_12",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "nur-xddxdd": "nur-xddxdd"
+        "nur-xddxdd": "nur-xddxdd",
+        "skills": "skills"
       }
     },
     "rust-overlay": {
@@ -1593,6 +1594,22 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
+      }
+    },
+    "skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791598439,
+        "narHash": "sha256-HTCInPvYyVodmrp70fb/MqonnAlo8uf4yi6OP7gUSqg=",
+        "ref": "refs/heads/master",
+        "rev": "a7e41302f6fd70fb2f79488fcebb278b7c483c38",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://git.redhawkcodes.dev/redhawk18/skills.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.redhawkcodes.dev/redhawk18/skills.git"
       }
     },
     "systems": {

@@ -32,6 +32,10 @@
       url = "github:redhawk18/neovim-config";
       flake = false;
     };
+    skills = {
+      url = "git+https://git.redhawkcodes.dev/redhawk18/skills.git";
+      flake = false;
+    };
 
     # NUR
     nur-xddxdd.url = "github:xddxdd/nur-packages";
