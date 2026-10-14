@@ -82,10 +82,6 @@ in
         bash = {
           enable = true;
 
-          initExtra = ''
-            eval "$(starship init bash)"
-          '';
-
           sessionVariables = {
             NIXPKGS_ALLOW_INSECURE = 1;
             NIXPKGS_ALLOW_UNFREE = 1;
