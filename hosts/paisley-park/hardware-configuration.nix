@@ -88,8 +88,18 @@
     # Enable the nvidia settings menu
     nvidiaSettings = true;
 
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # Pinned, not `stable`. The GTX 1050 is GP107 (Pascal), and R580 is the
+    # last branch that supports Maxwell/Pascal/Volta -- 590+ ignores the card
+    # entirely. `stable` reached 595.71.05, which loads, finds the GPU, logs
+    # "The 595.71.05 NVIDIA driver will ignore this GPU", then "No NVIDIA GPU
+    # found", and leaves the box with no /dev/nvidia* and no hardware
+    # transcoding for plex.
+    #
+    # Do not move this back to `stable`. 580 is a terminal branch getting
+    # kernel-compat fixes only, so a future kernel bump will eventually fail to
+    # build against it -- which is the loud failure we want, rather than a
+    # driver that silently ignores the hardware.
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
 }

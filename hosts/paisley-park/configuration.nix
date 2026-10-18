@@ -12,6 +12,7 @@
     ./services/calibre.nix
     ./services/cloudflared.nix
     ./services/forgejo.nix
+    ./services/immich.nix
     ./services/minecraft.nix
     ./services/nfs.nix
     ./services/romm.nix
