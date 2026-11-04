@@ -15,8 +15,8 @@
 
     servers = {
       "1.21-World" = {
-        enable = false;
-        package = pkgs.minecraftServers.vanilla-1_21_4;
+        enable = true;
+        package = pkgs.minecraftServers.vanilla-26_3;
         jvmOpts = "-Xms1G -Xmx8G";
 
         serverProperties = {
@@ -68,7 +68,7 @@
       };
 
       coop = {
-        enable = true;
+        enable = false;
         package = pkgs.fabricServers.fabric-26_2.override { jre_headless = pkgs.jdk25; };
         jvmOpts = "-Xms1G -Xmx8G";
 
