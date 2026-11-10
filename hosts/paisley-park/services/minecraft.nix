@@ -25,7 +25,7 @@
           level-name = "1.21-World";
           level-seed = 7025192174381717753;
           motd = "A thankful server";
-          server-ip = "paisley-park";
+          server-ip = "";
           server-port = 25565;
           simulation-distance = 18;
           spawn-protection = 0;
@@ -46,7 +46,7 @@
           level-name = "bigChadGuys2";
           motd = "A Strawberryrkc Summer";
           pvp = false;
-          server-ip = "paisley-park";
+          server-ip = "";
           server-port = 25566;
           simulation-distance = 14;
           spawn-protection = 0;
